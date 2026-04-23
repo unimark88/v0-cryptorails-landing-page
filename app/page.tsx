@@ -389,186 +389,6 @@ function FeatureCard({
   );
 }
 
-function DashboardMockup() {
-  return (
-    <div className="relative mx-auto w-full max-w-3xl">
-      <div className="absolute inset-0 rounded-[32px] bg-[radial-gradient(circle_at_center,rgba(34,211,238,0.18),transparent_45%),radial-gradient(circle_at_top_right,rgba(37,99,235,0.2),transparent_35%)] blur-3xl" />
-      <div className="relative overflow-hidden rounded-[32px] border border-slate-800 bg-[#0A1222]/95 shadow-[0_30px_80px_rgba(0,0,0,0.45)]">
-        <div className="flex items-center justify-between border-b border-slate-800 px-6 py-4">
-          <CryptoRailsLogo />
-          <div className="hidden gap-2 sm:flex">
-            <div className="rounded-lg border border-slate-800 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-400">
-              Live
-            </div>
-            <div className="rounded-lg border border-slate-800 bg-slate-900/80 px-3 py-1.5 text-xs text-slate-400">
-              Overview
-            </div>
-          </div>
-        </div>
-
-        <div className="grid gap-0 lg:grid-cols-[220px_1fr]">
-          <div className="border-b border-slate-800 p-4 lg:border-b-0 lg:border-r">
-            <div className="space-y-2">
-              {[
-                "Dashboard",
-                "Wallets",
-                "Deposits",
-                "Consolidation",
-                "Transactions",
-                "Treasury",
-                "API & Webhooks",
-                "Reports",
-                "Settings",
-              ].map((item, idx) => (
-                <div
-                  key={item}
-                  className={cn(
-                    "rounded-xl px-3 py-2 text-sm",
-                    idx === 0
-                      ? "border border-blue-500/20 bg-blue-500/10 text-blue-300"
-                      : "text-slate-400"
-                  )}
-                >
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="p-4 sm:p-6">
-            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-              {[
-                { label: "Total Volume (30d)", value: "$12,483,920", change: "+12.4%" },
-                { label: "Active Wallets", value: "8,421", change: "+8.7%" },
-                { label: "Pending Deposits", value: "312", change: "-3.3%" },
-                { label: "Treasury Balance", value: "$3,294,120", change: "+11.1%" },
-              ].map((card) => (
-                <div
-                  key={card.label}
-                  className="rounded-2xl border border-slate-800 bg-slate-900/60 p-4"
-                >
-                  <div className="text-xs text-slate-500">{card.label}</div>
-                  <div className="mt-3 text-2xl font-semibold text-slate-50">{card.value}</div>
-                  <div className="mt-1 text-xs text-emerald-400">{card.change}</div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-5 grid gap-4 xl:grid-cols-[1.25fr_0.85fr]">
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-                <div className="mb-5 flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-medium text-slate-200">Fund Consolidation Flow</div>
-                    <div className="text-xs text-slate-500">
-                      Segregated wallets routing into treasury
-                    </div>
-                  </div>
-                  <div className="rounded-full border border-blue-500/20 bg-blue-500/10 px-3 py-1 text-xs text-blue-300">
-                    Live
-                  </div>
-                </div>
-
-                <div className="grid gap-4 md:grid-cols-[180px_1fr_160px]">
-                  <div className="space-y-3">
-                    {["Wallet #A91K", "Wallet #B34L", "Wallet #C7TM", "Wallet #D92P", "Wallet #ET1Q"].map(
-                      (wallet) => (
-                        <div
-                          key={wallet}
-                          className="rounded-xl border border-slate-800 bg-[#0B1426] px-3 py-3 text-sm text-slate-300"
-                        >
-                          {wallet}
-                        </div>
-                      )
-                    )}
-                  </div>
-
-                  <div className="relative hidden min-h-[220px] md:block">
-                    <svg className="h-full w-full" viewBox="0 0 320 220" fill="none">
-                      <defs>
-                        <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor="#2563EB" stopOpacity="0.7" />
-                          <stop offset="100%" stopColor="#22D3EE" stopOpacity="0.9" />
-                        </linearGradient>
-                      </defs>
-                      {[
-                        [20, 28, 248, 110],
-                        [20, 70, 248, 110],
-                        [20, 110, 248, 110],
-                        [20, 150, 248, 110],
-                        [20, 192, 248, 110],
-                      ].map(([x1, y1, x2, y2], i) => (
-                        <path
-                          key={i}
-                          d={`M${x1} ${y1} C120 ${y1}, 180 ${y1}, ${x2} ${y2}`}
-                          stroke="url(#lineGrad)"
-                          strokeWidth="2"
-                        />
-                      ))}
-                      <circle cx="252" cy="110" r="12" fill="#2563EB" fillOpacity="0.2" />
-                      <circle cx="252" cy="110" r="5" fill="#22D3EE" />
-                    </svg>
-                  </div>
-
-                  <div className="flex items-center justify-center">
-                    <div className="w-full rounded-2xl border border-blue-500/20 bg-[radial-gradient(circle_at_top,rgba(37,99,235,0.2),rgba(13,27,42,0.95))] p-5 text-center">
-                      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-400/20 bg-blue-500/10 text-blue-300">
-                        <svg
-                          viewBox="0 0 24 24"
-                          className="h-6 w-6"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="1.8"
-                        >
-                          <rect x="4" y="6" width="16" height="12" rx="3" />
-                          <path d="M14 12h.01" />
-                        </svg>
-                      </div>
-                      <div className="text-sm text-slate-300">Treasury Wallet</div>
-                      <div className="mt-2 text-xs text-slate-500">0xf...7a3e</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5">
-                <div className="mb-5 flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-medium text-slate-200">Recent Activity</div>
-                    <div className="text-xs text-slate-500">Latest payment events</div>
-                  </div>
-                  <span className="text-xs text-blue-300">View all</span>
-                </div>
-
-                <div className="space-y-3">
-                  {[
-                    { color: "bg-emerald-400", title: "+ 120 USDT", meta: "Received in Wallet #A91K", time: "2m ago" },
-                    { color: "bg-amber-400", title: "+ 0.5 BTC", meta: "Received in Wallet #F302", time: "4m ago" },
-                    { color: "bg-sky-400", title: "+ 2,000 USDC", meta: "Received in Wallet #C7TM", time: "6m ago" },
-                    { color: "bg-violet-400", title: "Consolidation completed", meta: "14 wallets moved to treasury", time: "8m ago" },
-                    { color: "bg-cyan-400", title: "+ 10 ETH", meta: "Received in Wallet #D92P", time: "10m ago" },
-                  ].map((item) => (
-                    <div
-                      key={item.title + item.time}
-                      className="flex items-start gap-3 rounded-xl border border-slate-800 bg-[#0B1426] px-3 py-3"
-                    >
-                      <div className={`mt-1 h-2.5 w-2.5 rounded-full ${item.color}`} />
-                      <div className="min-w-0 flex-1">
-                        <div className="text-sm font-medium text-slate-200">{item.title}</div>
-                        <div className="truncate text-xs text-slate-500">{item.meta}</div>
-                      </div>
-                      <div className="text-xs text-slate-500">{item.time}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function FAQItem({
   question,
   answer,
@@ -728,7 +548,14 @@ export default function CryptoRailsLandingPage() {
           </div>
 
           <div className="flex items-center justify-center lg:pl-4">
-            <DashboardMockup />
+            <div className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-slate-800 bg-[#0A1222] shadow-2xl shadow-blue-900/20">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tof8I6e63T99sEmSZ7Rr578b0zdDnt.png"
+                alt="CryptoRails Admin Dashboard showing fund consolidation flow, wallet management, and real-time activity monitoring"
+                className="relative w-full"
+              />
+            </div>
           </div>
         </div>
       </section>
