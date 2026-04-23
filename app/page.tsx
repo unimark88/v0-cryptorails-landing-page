@@ -321,7 +321,7 @@ function SectionHeading({
   return (
     <div className={center ? "mx-auto max-w-2xl text-center" : "max-w-xl"}>
       {eyebrow ? (
-        <div className="mb-3 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
+        <div className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
           {eyebrow}
         </div>
       ) : null}
@@ -329,7 +329,7 @@ function SectionHeading({
         {title}
       </h2>
       {description ? (
-        <p className="mt-3 text-xs leading-6 text-slate-400 sm:text-sm">
+        <p className="mt-3 text-[11px] leading-6 text-slate-400">
           {description}
         </p>
       ) : null}
@@ -418,7 +418,7 @@ function ApiCodeTabs() {
             key={t.name}
             onClick={() => setActiveTab(idx)}
             className={cn(
-              "cursor-pointer rounded px-1.5 py-0.5 text-[9px] transition",
+              "cursor-pointer rounded px-1.5 py-0.5 text-[10px] transition",
               idx === activeTab
                 ? "border border-blue-500/20 bg-blue-500/10 text-blue-300"
                 : "text-slate-400 hover:text-slate-300"
@@ -430,8 +430,8 @@ function ApiCodeTabs() {
       </div>
 
       <div className="mt-3 overflow-hidden rounded-md border border-slate-800 bg-[#06101F] p-2.5">
-        <div className="mb-1.5 text-[9px] text-slate-400">{tab.endpoint}</div>
-        <pre className="overflow-x-auto text-[9px] leading-4 text-slate-300">
+        <div className="mb-1.5 text-[10px] text-slate-400">{tab.endpoint}</div>
+        <pre className="overflow-x-auto text-[10px] leading-4 text-slate-300">
           {tab.code}
         </pre>
       </div>
@@ -440,7 +440,7 @@ function ApiCodeTabs() {
         {tab.features.map((note) => (
           <div
             key={note}
-            className="rounded border border-slate-800 bg-white/[0.02] p-2 text-[9px] leading-4 text-slate-400"
+            className="rounded border border-slate-800 bg-white/[0.02] p-2 text-[10px] leading-4 text-slate-400"
           >
             {note}
           </div>
@@ -464,8 +464,8 @@ function FeatureCard({
       <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-blue-500/20 bg-blue-500/10 text-blue-300">
         <Icon name={icon} className="h-5 w-5" />
       </div>
-      <h3 className="text-sm font-semibold text-slate-100">{title}</h3>
-      <p className="mt-2 text-xs leading-5 text-slate-400">{description}</p>
+      <h3 className="text-xs font-semibold text-slate-100">{title}</h3>
+      <p className="mt-2 text-[10px] leading-4 text-slate-400">{description}</p>
     </div>
   );
 }
@@ -486,12 +486,12 @@ function FAQItem({
         onClick={() => setOpen((v) => !v)}
       >
         <span className="text-xs font-medium text-slate-100">{question}</span>
-        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-xs border border-slate-700 text-slate-400">
+        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-[10px] border border-slate-700 text-slate-400">
           {open ? "−" : "+"}
         </span>
       </button>
       {open ? (
-        <div className="px-4 pb-4 text-xs leading-5 text-slate-400">{answer}</div>
+        <div className="px-4 pb-4 text-[11px] leading-5 text-slate-400">{answer}</div>
       ) : null}
     </div>
   );
@@ -507,7 +507,7 @@ function FooterColumn({
   return (
     <div>
       <h3 className="text-xs font-semibold text-slate-100">{title}</h3>
-      <ul className="mt-3 space-y-2 text-[11px] text-slate-400">
+      <ul className="mt-3 space-y-2 text-[10px] text-slate-400">
         {items.map((item) => (
           <li key={item}>
             <a href="#" className="cursor-pointer transition hover:text-slate-200">
@@ -712,7 +712,7 @@ export default function CryptoRailsLandingPage() {
               title="A scalable crypto payment gateway for modern businesses"
               description="CryptoRails provides a full-stack crypto payment gateway designed for businesses that need reliable, scalable, and structured payment infrastructure."
             />
-            <div className="mt-4 space-y-2.5 text-xs leading-5 text-slate-400 sm:text-sm sm:leading-6">
+            <div className="mt-4 space-y-2.5 text-[11px] leading-5 text-slate-400">
               <p>
                 Unlike traditional crypto payment solutions, CryptoRails uses a segregated wallet architecture, allowing each user, transaction, or merchant to receive payments through a unique wallet address.
               </p>
@@ -733,7 +733,7 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
-        <div className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-slate-500">
+        <div className="text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
           How our crypto payment gateway works
         </div>
         <div className="mt-8 grid gap-4 lg:grid-cols-4">
@@ -750,9 +750,9 @@ export default function CryptoRailsLandingPage() {
                   <Icon name={step.icon} className="h-4 w-4" />
                 </div>
               </div>
-              <div className="mb-1 text-[11px] font-medium text-slate-500">{step.number}</div>
-              <h3 className="text-sm font-semibold text-slate-100">{step.title}</h3>
-              <p className="mx-auto mt-2 max-w-[180px] text-[11px] leading-5 text-slate-400">{step.description}</p>
+              <div className="mb-1 text-[10px] font-medium text-slate-500">{step.number}</div>
+              <h3 className="text-xs font-semibold text-slate-100">{step.title}</h3>
+              <p className="mx-auto mt-2 max-w-[180px] text-[10px] leading-5 text-slate-400">{step.description}</p>
             </div>
           ))}
         </div>
@@ -761,7 +761,7 @@ export default function CryptoRailsLandingPage() {
       <section id="solutions" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:items-start">
           <div>
-            <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
+            <div className="mb-2 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
               Built for businesses
             </div>
             <h2 className="text-base font-semibold tracking-tight text-slate-50 sm:text-lg">
@@ -780,7 +780,7 @@ export default function CryptoRailsLandingPage() {
                 <div className="mb-2 inline-flex h-7 w-7 items-center justify-center rounded-md border border-slate-700 bg-slate-900/80 text-blue-300">
                   <Icon name={solution.icon} className="h-3.5 w-3.5" />
                 </div>
-                <h3 className="text-[11px] font-semibold text-slate-100">{solution.title}</h3>
+                <h3 className="text-xs font-semibold text-slate-100">{solution.title}</h3>
                 <p className="mt-1 text-[10px] leading-4 text-slate-400">{solution.description}</p>
               </div>
             ))}
@@ -796,15 +796,15 @@ export default function CryptoRailsLandingPage() {
               className="rounded-lg border border-blue-500/20 bg-[linear-gradient(135deg,rgba(37,99,235,0.12),rgba(6,16,31,0.95))] p-2.5"
             >
               <div className="text-base font-semibold text-cyan-300">{stat.value}</div>
-              <div className="mt-0.5 text-[9px] text-slate-400">{stat.label}</div>
+              <div className="mt-0.5 text-[10px] text-slate-400">{stat.label}</div>
             </div>
           ))}
           <div className="rounded-lg border border-slate-800 bg-white/[0.02] p-2.5">
             <div className="mb-1.5 flex h-6 w-6 items-center justify-center rounded-md border border-blue-500/20 bg-blue-500/10 text-blue-300">
               <Icon name="fintech" className="h-3 w-3" />
             </div>
-            <div className="text-[11px] font-medium text-slate-100">Built for global businesses</div>
-            <p className="mt-0.5 text-[9px] leading-4 text-slate-400">
+            <div className="text-xs font-medium text-slate-100">Built for global businesses</div>
+            <p className="mt-0.5 text-[10px] leading-4 text-slate-400">
               Trusted for scalable crypto payment processing and treasury visibility.
             </p>
           </div>
@@ -837,8 +837,8 @@ export default function CryptoRailsLandingPage() {
                     <Icon name={item.icon} className="h-3 w-3" />
                   </div>
                   <div>
-                    <div className="text-[11px] font-medium text-slate-100">{item.title}</div>
-                    <div className="text-[9px] leading-4 text-slate-400">{item.desc}</div>
+                    <div className="text-xs font-medium text-slate-100">{item.title}</div>
+                    <div className="text-[10px] leading-4 text-slate-400">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -850,7 +850,7 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <section id="resources" className="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
-        <div className="mb-5 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
+        <div className="mb-5 text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
           Frequently asked questions
         </div>
         <div className="grid gap-2 lg:grid-cols-2">
@@ -884,7 +884,7 @@ export default function CryptoRailsLandingPage() {
           <div className="grid gap-6 lg:grid-cols-[1fr_2.5fr]">
             <div>
               <CryptoRailsLogo />
-              <p className="mt-2.5 max-w-xs text-[9px] leading-4 text-slate-400">
+              <p className="mt-2.5 max-w-xs text-[10px] leading-4 text-slate-400">
                 Modern crypto payment gateway infrastructure for businesses that need segregated wallets, secure treasury flows, and scalable fund consolidation.
               </p>
               <div className="mt-3 flex gap-1.5">
@@ -930,7 +930,7 @@ export default function CryptoRailsLandingPage() {
             </div>
           </div>
 
-          <div className="mt-5 flex flex-col gap-2 border-t border-slate-800 pt-4 text-[9px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-5 flex flex-col gap-2 border-t border-slate-800 pt-4 text-[10px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
             <div>© 2026 CryptoRails. All rights reserved.</div>
             <div>Built for scale. Secured for trust.</div>
           </div>
