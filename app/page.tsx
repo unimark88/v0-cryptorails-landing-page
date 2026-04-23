@@ -460,12 +460,12 @@ function FeatureCard({
   icon: string;
 }) {
   return (
-    <div className="rounded-xl border border-slate-800 bg-white/[0.02] p-3">
-      <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-blue-500/20 bg-blue-500/10 text-blue-300">
-        <Icon name={icon} className="h-4 w-4" />
+    <div className="rounded-xl border border-slate-800 bg-white/[0.02] p-4">
+      <div className="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-lg border border-blue-500/20 bg-blue-500/10 text-blue-300">
+        <Icon name={icon} className="h-5 w-5" />
       </div>
-      <h3 className="text-xs font-semibold text-slate-100">{title}</h3>
-      <p className="mt-1.5 text-[10px] leading-4 text-slate-400">{description}</p>
+      <h3 className="text-sm font-semibold text-slate-100">{title}</h3>
+      <p className="mt-2 text-xs leading-5 text-slate-400">{description}</p>
     </div>
   );
 }
@@ -712,7 +712,7 @@ export default function CryptoRailsLandingPage() {
               title="A scalable crypto payment gateway for modern businesses"
               description="CryptoRails provides a full-stack crypto payment gateway designed for businesses that need reliable, scalable, and structured payment infrastructure."
             />
-            <div className="mt-4 space-y-2.5 text-[11px] leading-5 text-slate-400">
+            <div className="mt-4 space-y-2.5 text-xs leading-5 text-slate-400 sm:text-sm sm:leading-6">
               <p>
                 Unlike traditional crypto payment solutions, CryptoRails uses a segregated wallet architecture, allowing each user, transaction, or merchant to receive payments through a unique wallet address.
               </p>
