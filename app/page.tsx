@@ -594,8 +594,8 @@ export default function CryptoRailsLandingPage() {
               Crypto Payment Infrastructure
             </div>
 
-            <h1 className="max-w-xl text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl lg:text-4xl">
-              Crypto Payment Gateway Infrastructure for <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">global businesses</span>
+            <h1 className="max-w-2xl text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl lg:text-4xl">
+              Crypto Payment Gateway Infrastructure for <span className="whitespace-nowrap bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">global businesses</span>
             </h1>
 
             <p className="mt-5 max-w-lg text-xs leading-6 text-slate-400 sm:text-sm">
