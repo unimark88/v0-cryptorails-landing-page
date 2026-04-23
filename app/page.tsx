@@ -516,16 +516,16 @@ function FooterColumn({
   items,
 }: {
   title: string;
-  items: string[];
+  items: { label: string; href: string }[];
 }) {
   return (
     <div>
       <h3 className="text-sm font-semibold text-slate-100">{title}</h3>
       <ul className="mt-3 space-y-2.5 text-xs text-slate-400">
         {items.map((item) => (
-          <li key={item}>
-            <a href="#" className="cursor-pointer transition hover:text-slate-200">
-              {item}
+          <li key={item.label}>
+            <a href={item.href} className="cursor-pointer transition hover:text-slate-200">
+              {item.label}
             </a>
           </li>
         ))}
@@ -911,23 +911,48 @@ export default function CryptoRailsLandingPage() {
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
               <FooterColumn
                 title="Product"
-                items={["Wallets", "Consolidation", "Monitoring", "API & Webhooks"]}
+                items={[
+                  { label: "Segregated Wallets", href: "#product" },
+                  { label: "Fund Consolidation", href: "#product" },
+                  { label: "Treasury Management", href: "#product" },
+                  { label: "Real-time Monitoring", href: "#product" },
+                ]}
               />
               <FooterColumn
                 title="Developers"
-                items={["Documentation", "API Reference", "Webhooks", "Status"]}
+                items={[
+                  { label: "Documentation", href: "#developers" },
+                  { label: "API Reference", href: "#developers" },
+                  { label: "Webhooks Guide", href: "#developers" },
+                  { label: "SDK Libraries", href: "#developers" },
+                ]}
               />
               <FooterColumn
                 title="Solutions"
-                items={["Payment Processors", "OTC Desks", "Marketplaces", "Fintech"]}
+                items={[
+                  { label: "Payment Processors", href: "#solutions" },
+                  { label: "OTC Desks", href: "#solutions" },
+                  { label: "Crypto Exchanges", href: "#solutions" },
+                  { label: "Gaming Platforms", href: "#solutions" },
+                ]}
               />
               <FooterColumn
-                title="Company"
-                items={["About Us", "Careers", "Contact", "Blog"]}
+                title="Resources"
+                items={[
+                  { label: "How it Works", href: "#how-it-works" },
+                  { label: "FAQ", href: "#faq" },
+                  { label: "Blog", href: "#" },
+                  { label: "System Status", href: "#" },
+                ]}
               />
               <FooterColumn
                 title="Legal"
-                items={["Privacy Policy", "Terms of Service", "AML Policy", "Risk Disclosure"]}
+                items={[
+                  { label: "Privacy Policy", href: "#" },
+                  { label: "Terms of Service", href: "#" },
+                  { label: "AML Policy", href: "#" },
+                  { label: "Cookie Policy", href: "#" },
+                ]}
               />
             </div>
           </div>
