@@ -733,26 +733,26 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
-        <div className="text-center text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
+        <div className="text-center text-[11px] font-medium uppercase tracking-[0.2em] text-slate-500">
           How our crypto payment gateway works
         </div>
-        <div className="mt-6 grid gap-3 lg:grid-cols-4">
+        <div className="mt-8 grid gap-4 lg:grid-cols-4">
           {steps.map((step, idx) => (
             <div key={step.number} className="relative text-center">
               {idx < steps.length - 1 && (
-                <div className="absolute left-[calc(50%+20px)] top-5 hidden h-[2px] w-[calc(100%-40px)] lg:block">
+                <div className="absolute left-[calc(50%+24px)] top-6 hidden h-[2px] w-[calc(100%-48px)] lg:block">
                   <div className="h-full w-full border-t-2 border-dashed border-slate-700" />
                   <div className="absolute right-0 top-1/2 h-1.5 w-1.5 -translate-y-1/2 rounded-full bg-cyan-400/60" />
                 </div>
               )}
-              <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-lg border border-slate-700 bg-[#0A1222]">
-                <div className="flex h-7 w-7 items-center justify-center rounded-md border border-blue-500/30 bg-blue-500/10 text-blue-300">
-                  <Icon name={step.icon} className="h-3.5 w-3.5" />
+              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-lg border border-slate-700 bg-[#0A1222]">
+                <div className="flex h-8 w-8 items-center justify-center rounded-md border border-blue-500/30 bg-blue-500/10 text-blue-300">
+                  <Icon name={step.icon} className="h-4 w-4" />
                 </div>
               </div>
-              <div className="mb-0.5 text-[9px] font-medium text-slate-500">{step.number}</div>
-              <h3 className="text-[11px] font-semibold text-slate-100">{step.title}</h3>
-              <p className="mx-auto mt-1.5 max-w-[160px] text-[10px] leading-4 text-slate-400">{step.description}</p>
+              <div className="mb-1 text-[11px] font-medium text-slate-500">{step.number}</div>
+              <h3 className="text-sm font-semibold text-slate-100">{step.title}</h3>
+              <p className="mx-auto mt-2 max-w-[180px] text-[11px] leading-5 text-slate-400">{step.description}</p>
             </div>
           ))}
         </div>
