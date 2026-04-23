@@ -586,10 +586,10 @@ export default function CryptoRailsLandingPage() {
 
           <nav className="hidden items-center gap-6 lg:flex">
             <a href="#product" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">Product</a>
+            <a href="#how-it-works" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">How it works</a>
             <a href="#solutions" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">Solutions</a>
             <a href="#developers" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">Developers</a>
-            <a href="#resources" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">Resources</a>
-            <a href="#company" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">Company</a>
+            <a href="#faq" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">FAQ</a>
           </nav>
 
           <div className="flex items-center gap-4">
@@ -746,7 +746,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+      <section id="how-it-works" className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
         <div className="text-center text-base font-medium uppercase tracking-[0.2em] text-slate-500">
           How our crypto payment gateway works
         </div>
@@ -813,19 +813,19 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="developers" className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
-        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+      <section id="developers" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="flex flex-col justify-center">
             <SectionHeading
               eyebrow="Developers"
               title="API-first. Developer ready."
               description="Integrate wallet creation, payment tracking, fund consolidation, and webhooks in minutes."
             />
-            <div className="mt-8">
+            <div className="mt-6">
               <Button>Explore API Docs</Button>
             </div>
 
-            <div className="mt-8 space-y-3">
+            <div className="mt-6 space-y-2">
               {[
                 { title: "Sandbox Environment", desc: "Test your integration safely before going live.", icon: "sandbox" },
                 { title: "Detailed Documentation", desc: "Everything your team needs to integrate quickly.", icon: "docs" },
@@ -833,14 +833,14 @@ export default function CryptoRailsLandingPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-start gap-4 rounded-lg border border-slate-800 bg-white/[0.02] p-4"
+                  className="flex items-start gap-3 rounded-md border border-slate-800 bg-white/[0.02] p-3"
                 >
-                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-slate-700 bg-slate-900/80 text-blue-300">
-                    <Icon name={item.icon} className="h-5 w-5" />
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded border border-slate-700 bg-slate-900/80 text-blue-300">
+                    <Icon name={item.icon} className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className="text-base font-medium text-slate-100">{item.title}</div>
-                    <div className="text-sm leading-6 text-slate-400">{item.desc}</div>
+                    <div className="text-sm font-medium text-slate-100">{item.title}</div>
+                    <div className="text-xs leading-5 text-slate-400">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -851,7 +851,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="resources" className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+      <section id="faq" className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
         <div className="mb-10 text-center text-base font-medium uppercase tracking-[0.2em] text-slate-500">
           Frequently asked questions
         </div>
