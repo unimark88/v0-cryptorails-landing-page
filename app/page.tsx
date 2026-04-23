@@ -486,13 +486,27 @@ function FAQItem({
         onClick={() => setOpen((v) => !v)}
       >
         <span className="text-[13px] font-medium text-slate-100">{question}</span>
-        <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded text-[11px] border border-slate-700 text-slate-400">
-          {open ? "−" : "+"}
+        <span 
+          className={cn(
+            "flex h-5 w-5 shrink-0 items-center justify-center rounded border border-slate-700 text-slate-400 transition-transform duration-200",
+            open && "rotate-45"
+          )}
+        >
+          <svg viewBox="0 0 12 12" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="2">
+            <path d="M6 2v8M2 6h8" />
+          </svg>
         </span>
       </button>
-      {open ? (
-        <div className="px-4 pb-4 text-xs leading-5 text-slate-400">{answer}</div>
-      ) : null}
+      <div 
+        className={cn(
+          "grid transition-all duration-200 ease-in-out",
+          open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+        )}
+      >
+        <div className="overflow-hidden">
+          <div className="px-4 pb-4 text-xs leading-5 text-slate-400">{answer}</div>
+        </div>
+      </div>
     </div>
   );
 }
