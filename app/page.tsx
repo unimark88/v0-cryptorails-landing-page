@@ -627,19 +627,21 @@ export default function CryptoRailsLandingPage() {
           </div>
 
           <div className="flex items-center justify-center lg:pl-4">
-            <div className="relative w-full max-w-xl overflow-hidden rounded-xl border border-slate-800 bg-[#0A1222] shadow-xl shadow-blue-900/20">
+            <div className="relative w-full max-w-2xl overflow-hidden rounded-xl border border-slate-800 bg-[#0A1222] shadow-2xl shadow-blue-900/30">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
-              <img
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tof8I6e63T99sEmSZ7Rr578b0zdDnt.png"
-                alt="CryptoRails Admin Dashboard showing fund consolidation flow, wallet management, and real-time activity monitoring"
-                className="relative w-full"
-              />
+              <div className="relative h-[320px] w-full overflow-hidden sm:h-[380px] lg:h-[420px]">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tof8I6e63T99sEmSZ7Rr578b0zdDnt.png"
+                  alt="CryptoRails Admin Dashboard showing fund consolidation flow, wallet management, and real-time activity monitoring"
+                  className="absolute left-0 top-0 w-[140%] max-w-none origin-top-left scale-100"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-white/5 py-6">
+      <section className="border-y border-white/5 py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center text-[10px] font-medium uppercase tracking-[0.24em] text-slate-500">
             Trusted by innovative companies worldwide
@@ -699,7 +701,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="product" className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
+      <section id="product" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div>
             <SectionHeading
@@ -727,7 +729,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-6 lg:px-8 lg:py-8">
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
         <div className="text-center text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
           How our crypto payment gateway works
         </div>
@@ -753,7 +755,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="solutions" className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-12">
+      <section id="solutions" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-6 lg:grid-cols-[0.6fr_1.4fr] lg:items-start">
           <div>
             <div className="mb-2 text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
@@ -783,7 +785,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-6 lg:px-8 lg:py-8">
+      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-14">
         <div className="grid gap-2.5 sm:grid-cols-2 lg:grid-cols-5">
           {stats.map((stat) => (
             <div
@@ -806,7 +808,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="developers" className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-12">
+      <section id="developers" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="flex flex-col justify-center">
             <SectionHeading
@@ -844,7 +846,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="resources" className="mx-auto max-w-7xl px-6 py-8 lg:px-8 lg:py-10">
+      <section id="resources" className="mx-auto max-w-7xl px-6 py-14 lg:px-8 lg:py-16">
         <div className="mb-5 text-center text-[10px] font-medium uppercase tracking-[0.2em] text-slate-500">
           Frequently asked questions
         </div>
@@ -855,7 +857,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="company" className="mx-auto max-w-7xl px-6 pb-10 lg:px-8 lg:pb-12">
+      <section id="company" className="mx-auto max-w-7xl px-6 pb-16 lg:px-8 lg:pb-20">
         <div className="overflow-hidden rounded-lg border border-blue-500/20 bg-[linear-gradient(135deg,rgba(37,99,235,0.16),rgba(10,18,34,0.98)_42%,rgba(34,211,238,0.08))] px-5 py-6 shadow-[0_12px_30px_rgba(37,99,235,0.1)] sm:px-6 sm:py-7">
           <div className="grid gap-5 lg:grid-cols-[1.15fr_auto] lg:items-center">
             <div>
@@ -875,7 +877,7 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <footer className="border-t border-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-6 lg:px-8 lg:py-8">
+        <div className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-12">
           <div className="grid gap-6 lg:grid-cols-[1fr_2.5fr]">
             <div>
               <CryptoRailsLogo />
