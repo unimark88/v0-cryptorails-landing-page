@@ -115,31 +115,37 @@ const featureCards = [
     title: "Segregated Wallets",
     description:
       "Generate unique deposit wallets for each user, merchant, invoice, or transaction. Improve tracking, reduce reconciliation errors, and support scalable crypto payment operations.",
+    icon: "wallet",
   },
   {
     title: "Automated Fund Consolidation",
     description:
       "Automatically consolidate funds from distributed wallets into your treasury wallet with flexible rules, thresholds, and scheduling.",
+    icon: "consolidate",
   },
   {
     title: "Real-time Monitoring",
     description:
       "Track deposits, confirmations, and payment statuses in real time across supported blockchain networks and stablecoin payment flows.",
+    icon: "monitor",
   },
   {
     title: "Multi-chain & Stablecoin Support",
     description:
       "Support major blockchains and digital assets including USDT, USDC, BTC, and ETH for global crypto payment processing.",
+    icon: "chain",
   },
   {
     title: "Crypto Payment API",
     description:
       "Integrate wallet creation, payment tracking, treasury workflows, and fund consolidation through developer-friendly APIs and webhooks.",
+    icon: "api",
   },
   {
     title: "Enterprise-grade Security",
     description:
       "Built for secure crypto payment infrastructure with operational controls and wallet architecture designed for trust and scale.",
+    icon: "security",
   },
 ];
 
@@ -148,31 +154,37 @@ const solutions = [
     title: "Payment Processors",
     description:
       "Launch a scalable crypto payment gateway with structured wallet flows, cleaner reconciliation, and treasury visibility.",
+    icon: "processor",
   },
   {
     title: "OTC Desks",
     description:
       "Manage client deposits, monitor incoming transfers, and consolidate funds efficiently into treasury wallets.",
+    icon: "otc",
   },
   {
     title: "Trading Platforms",
     description:
       "Offer users a seamless deposit experience with wallet-per-user crypto payment infrastructure.",
+    icon: "trading",
   },
   {
     title: "Marketplaces",
     description:
       "Accept crypto payments and simplify reconciliation with segregated wallets and automated treasury consolidation.",
+    icon: "marketplace",
   },
   {
     title: "Gaming Platforms",
     description:
       "Handle high-volume crypto payment processing with clearer tracking, faster monitoring, and reliable fund movement.",
+    icon: "gaming",
   },
   {
     title: "Fintech & Global Businesses",
     description:
       "Use modern crypto payment infrastructure for stablecoin settlement, treasury management, and multi-chain operations.",
+    icon: "fintech",
   },
 ];
 
@@ -182,24 +194,28 @@ const steps = [
     title: "Generate Wallets",
     description:
       "Create unique deposit wallet addresses for each user, merchant, invoice, or transaction flow.",
+    icon: "wallet",
   },
   {
     number: "02",
     title: "Receive Crypto Payments",
     description:
       "Accept payments in USDT, BTC, ETH, and other supported digital assets across multiple blockchain networks.",
+    icon: "receive",
   },
   {
     number: "03",
     title: "Monitor & Verify",
     description:
       "Track blockchain activity and confirm incoming payments in real time with full operational visibility.",
+    icon: "monitor",
   },
   {
     number: "04",
     title: "Consolidate Funds",
     description:
       "Automatically consolidate funds into a secure treasury wallet for simpler reconciliation and treasury management.",
+    icon: "consolidate",
   },
 ];
 
@@ -245,6 +261,105 @@ const faqs = [
 
 function cn(...classes: Array<string | false | null | undefined>) {
   return classes.filter(Boolean).join(" ");
+}
+
+function Icon({ name, className = "h-4 w-4" }: { name: string; className?: string }) {
+  const icons: Record<string, React.ReactNode> = {
+    // Feature icons
+    wallet: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <rect x="2" y="6" width="20" height="14" rx="2" />
+        <path d="M22 10H18a2 2 0 0 0 0 4h4" />
+        <path d="M18 12h.01" />
+        <path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+      </svg>
+    ),
+    consolidate: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M8 6h13M8 12h13M8 18h13" />
+        <path d="M3 6l3 3-3 3" />
+        <path d="M3 15l3 3-3 3" />
+      </svg>
+    ),
+    monitor: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+      </svg>
+    ),
+    chain: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="12" cy="12" r="3" />
+        <circle cx="4" cy="6" r="2" />
+        <circle cx="20" cy="6" r="2" />
+        <circle cx="4" cy="18" r="2" />
+        <circle cx="20" cy="18" r="2" />
+        <path d="M6 6.5L9.5 10M14.5 10L18 6.5M6 17.5L9.5 14M14.5 14L18 17.5" />
+      </svg>
+    ),
+    api: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M16 18l6-6-6-6" />
+        <path d="M8 6l-6 6 6 6" />
+      </svg>
+    ),
+    security: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        <path d="M9 12l2 2 4-4" />
+      </svg>
+    ),
+    // Solution icons
+    processor: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <rect x="9" y="9" width="6" height="6" />
+        <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" />
+      </svg>
+    ),
+    otc: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+      </svg>
+    ),
+    trading: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M3 3v18h18" />
+        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+      </svg>
+    ),
+    marketplace: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <path d="M9 22V12h6v10" />
+      </svg>
+    ),
+    gaming: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M6 12h4M8 10v4" />
+        <circle cx="17" cy="10" r="1" />
+        <circle cx="15" cy="14" r="1" />
+        <rect x="2" y="6" width="20" height="12" rx="3" />
+      </svg>
+    ),
+    fintech: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+    ),
+    // Step icons
+    receive: (
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke="currentColor" strokeWidth="1.8">
+        <path d="M12 2v14M5 10l7 7 7-7" />
+        <path d="M5 22h14" />
+      </svg>
+    ),
+  };
+  
+  return <>{icons[name] || icons.wallet}</>;
 }
 
 function CryptoRailsLogo() {
@@ -370,18 +485,16 @@ function NavDropdown({
 function FeatureCard({
   title,
   description,
+  icon,
 }: {
   title: string;
   description: string;
+  icon: string;
 }) {
   return (
     <div className="rounded-xl border border-slate-800 bg-white/[0.02] p-3">
       <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-blue-500/20 bg-blue-500/10 text-blue-300">
-        <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
-          <rect x="4" y="5" width="16" height="14" rx="3" />
-          <path d="M8 10h8" />
-          <path d="M8 14h5" />
-        </svg>
+        <Icon name={icon} className="h-4 w-4" />
       </div>
       <h3 className="text-xs font-semibold text-slate-100">{title}</h3>
       <p className="mt-1.5 text-[10px] leading-4 text-slate-400">{description}</p>
@@ -668,17 +781,7 @@ export default function CryptoRailsLandingPage() {
                 className="rounded-xl border border-slate-800 bg-white/[0.02] p-3"
               >
                 <div className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-lg border border-slate-700 bg-slate-900/80 text-blue-300">
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                  >
-                    <rect x="4" y="5" width="16" height="14" rx="3" />
-                    <path d="M8 10h8" />
-                    <path d="M8 14h5" />
-                  </svg>
+                  <Icon name={solution.icon} className="h-4 w-4" />
                 </div>
                 <h3 className="text-xs font-semibold text-slate-100">{solution.title}</h3>
                 <p className="mt-1.5 text-[10px] leading-4 text-slate-400">{solution.description}</p>
