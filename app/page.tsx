@@ -337,6 +337,119 @@ function SectionHeading({
   );
 }
 
+const apiTabs = [
+  {
+    name: "Wallets",
+    endpoint: "POST /wallets/create",
+    code: `{
+  "label": "Customer #12345",
+  "callback_url": "https://yourdomain.com/webhook",
+  "chain": "TRC20",
+  "asset": "USDT"
+}`,
+    features: ["Wallet-per-user architecture", "Multi-chain support", "Custom labels"],
+  },
+  {
+    name: "Payments",
+    endpoint: "GET /payments/{payment_id}",
+    code: `{
+  "id": "pay_8xK2mN3pQ7",
+  "wallet_id": "wal_A91K",
+  "amount": "120.00",
+  "asset": "USDT",
+  "chain": "TRC20",
+  "status": "confirmed",
+  "confirmations": 21,
+  "tx_hash": "0x7a3e...f291"
+}`,
+    features: ["Real-time status tracking", "Multi-confirmation support", "Transaction details"],
+  },
+  {
+    name: "Consolidation",
+    endpoint: "POST /consolidation/trigger",
+    code: `{
+  "source_wallets": ["wal_A91K", "wal_B34L"],
+  "destination": "treasury_main",
+  "asset": "USDT",
+  "min_amount": "100.00",
+  "schedule": "immediate"
+}`,
+    features: ["Flexible thresholds", "Scheduled transfers", "Multi-wallet batching"],
+  },
+  {
+    name: "Webhooks",
+    endpoint: "POST /webhooks/configure",
+    code: `{
+  "url": "https://yourdomain.com/webhook",
+  "events": [
+    "payment.received",
+    "payment.confirmed",
+    "consolidation.completed"
+  ],
+  "secret": "whsec_..."
+}`,
+    features: ["Event filtering", "Signature verification", "Retry logic"],
+  },
+  {
+    name: "Balances",
+    endpoint: "GET /balances/summary",
+    code: `{
+  "total_balance_usd": "3294120.00",
+  "assets": [
+    { "asset": "USDT", "chain": "TRC20", "balance": "1488920.00" },
+    { "asset": "USDC", "chain": "ERC20", "balance": "662340.00" },
+    { "asset": "BTC", "balance": "12.45" }
+  ],
+  "wallets_count": 8421
+}`,
+    features: ["Multi-asset overview", "Chain breakdown", "Real-time sync"],
+  },
+];
+
+function ApiCodeTabs() {
+  const [activeTab, setActiveTab] = useState(0);
+  const tab = apiTabs[activeTab];
+
+  return (
+    <div className="rounded-lg border border-slate-800 bg-[#0A1222] p-3">
+      <div className="flex flex-wrap gap-1 border-b border-slate-800 pb-2">
+        {apiTabs.map((t, idx) => (
+          <button
+            key={t.name}
+            onClick={() => setActiveTab(idx)}
+            className={cn(
+              "rounded px-1.5 py-0.5 text-[9px] transition",
+              idx === activeTab
+                ? "border border-blue-500/20 bg-blue-500/10 text-blue-300"
+                : "text-slate-400 hover:text-slate-300"
+            )}
+          >
+            {t.name}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-3 overflow-hidden rounded-md border border-slate-800 bg-[#06101F] p-2.5">
+        <div className="mb-1.5 text-[9px] text-slate-400">{tab.endpoint}</div>
+        <pre className="overflow-x-auto text-[9px] leading-4 text-slate-300">
+          {tab.code}
+        </pre>
+      </div>
+
+      <div className="mt-3 grid gap-1.5 sm:grid-cols-3">
+        {tab.features.map((note) => (
+          <div
+            key={note}
+            className="rounded border border-slate-800 bg-white/[0.02] p-2 text-[9px] leading-4 text-slate-400"
+          >
+            {note}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function FeatureCard({
   title,
   description,
@@ -727,52 +840,7 @@ export default function CryptoRailsLandingPage() {
             </div>
           </div>
 
-          <div className="rounded-lg border border-slate-800 bg-[#0A1222] p-3">
-            <div className="flex flex-wrap gap-1 border-b border-slate-800 pb-2">
-              {["Wallets", "Payments", "Consolidation", "Webhooks", "Balances"].map(
-                (tab, idx) => (
-                  <div
-                    key={tab}
-                    className={cn(
-                      "rounded px-1.5 py-0.5 text-[9px]",
-                      idx === 0
-                        ? "border border-blue-500/20 bg-blue-500/10 text-blue-300"
-                        : "text-slate-400"
-                    )}
-                  >
-                    {tab}
-                  </div>
-                )
-              )}
-            </div>
-
-            <div className="mt-3 overflow-hidden rounded-md border border-slate-800 bg-[#06101F] p-2.5">
-              <div className="mb-1.5 text-[9px] text-slate-400">POST /wallets/create</div>
-              <pre className="overflow-x-auto text-[9px] leading-4 text-slate-300">
-{`{
-  "label": "Customer #12345",
-  "callback_url": "https://yourdomain.com/webhook",
-  "chain": "TRC20",
-  "asset": "USDT"
-}`}
-              </pre>
-            </div>
-
-            <div className="mt-3 grid gap-1.5 sm:grid-cols-3">
-              {[
-                "Wallet-per-user architecture",
-                "Webhook event delivery",
-                "Programmable consolidation rules",
-              ].map((note) => (
-                <div
-                  key={note}
-                  className="rounded border border-slate-800 bg-white/[0.02] p-2 text-[9px] leading-4 text-slate-400"
-                >
-                  {note}
-                </div>
-              ))}
-            </div>
-          </div>
+          <ApiCodeTabs />
         </div>
       </section>
 
