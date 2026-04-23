@@ -646,53 +646,53 @@ export default function CryptoRailsLandingPage() {
 
       <section className="border-y border-white/5 py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center text-[10px] font-medium uppercase tracking-[0.24em] text-slate-500">
+          <div className="text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
             Trusted by innovative companies worldwide
           </div>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
             {trustedLogos.map((logo, idx) => (
               <div
                 key={logo}
-                className="flex items-center gap-1.5 text-xs text-slate-400"
+                className="flex items-center gap-2 text-sm text-slate-400"
               >
                 {idx === 0 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 )}
                 {idx === 1 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M8 12l2 2 4-4" />
                   </svg>
                 )}
                 {idx === 2 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 2L2 19h20L12 2z" />
                     <path d="M12 9v4M12 16h.01" />
                   </svg>
                 )}
                 {idx === 3 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M12 8v8M8 12h8" />
                   </svg>
                 )}
                 {idx === 4 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <circle cx="12" cy="12" r="4" />
                     <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
                   </svg>
                 )}
                 {idx === 5 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M4 4h16v16H4z" />
                     <path d="M4 4l16 16M20 4L4 20" />
                   </svg>
                 )}
                 {idx === 6 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 6v6l4 2" />
                   </svg>
