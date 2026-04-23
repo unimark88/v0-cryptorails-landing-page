@@ -307,6 +307,89 @@ function Button({
   );
 }
 
+const mobileMenuLinks = [
+  { label: "Product", href: "#product" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Developers", href: "#developers" },
+  { label: "FAQ", href: "#faq" },
+];
+
+function MobileMenuButton() {
+  return (
+    <button
+      className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-slate-700 bg-white/[0.02] text-slate-300 transition hover:border-slate-600 hover:text-white lg:hidden"
+      onClick={() => {
+        const menu = document.getElementById("mobile-menu");
+        if (menu) {
+          menu.classList.toggle("hidden");
+        }
+      }}
+    >
+      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  );
+}
+
+function MobileMenu() {
+  return (
+    <div
+      id="mobile-menu"
+      className="fixed inset-0 z-[100] hidden bg-[#050816]/98 backdrop-blur-xl lg:hidden"
+    >
+      <div className="flex h-full flex-col">
+        <div className="flex items-center justify-between border-b border-white/5 px-6 py-3">
+          <CryptoRailsLogo />
+          <button
+            className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border border-slate-700 bg-white/[0.02] text-slate-300 transition hover:border-slate-600 hover:text-white"
+            onClick={() => {
+              const menu = document.getElementById("mobile-menu");
+              if (menu) {
+                menu.classList.add("hidden");
+              }
+            }}
+          >
+            <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          </button>
+        </div>
+        
+        <nav className="flex flex-1 flex-col gap-1 p-6">
+          {mobileMenuLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="rounded-lg px-4 py-3 text-base font-medium text-slate-200 transition hover:bg-white/5 hover:text-white"
+              onClick={() => {
+                const menu = document.getElementById("mobile-menu");
+                if (menu) {
+                  menu.classList.add("hidden");
+                }
+              }}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+        
+        <div className="border-t border-white/5 p-6">
+          <div className="flex flex-col gap-3">
+            <button className="w-full cursor-pointer rounded-md border border-slate-700 bg-white/[0.02] px-4 py-3 text-sm font-medium text-slate-100 transition hover:border-slate-600 hover:bg-white/[0.04]">
+              Log in
+            </button>
+            <button className="w-full cursor-pointer rounded-md bg-blue-600 px-4 py-3 text-sm font-medium text-white shadow-[0_6px_20px_rgba(37,99,235,0.3)] transition hover:bg-blue-500">
+              Book a Demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function SectionHeading({
   eyebrow,
   title,
@@ -580,6 +663,8 @@ export default function CryptoRailsLandingPage() {
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.16),transparent_28%),radial-gradient(circle_at_top_right,rgba(34,211,238,0.08),transparent_24%),linear-gradient(180deg,#050816_0%,#07111F_50%,#050816_100%)]" />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(rgba(255,255,255,0.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.018)_1px,transparent_1px)] bg-[size:72px_72px] opacity-[0.06]" />
 
+      <MobileMenu />
+      
       <header className="sticky top-0 z-50 border-b border-white/5 bg-[#050816]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           <CryptoRailsLogo />
@@ -592,11 +677,14 @@ export default function CryptoRailsLandingPage() {
             <a href="#faq" className="cursor-pointer text-sm text-slate-300 transition hover:text-white">FAQ</a>
           </nav>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <button className="hidden cursor-pointer text-sm text-slate-300 transition hover:text-white sm:inline-flex">
               Log in
             </button>
-            <Button>Book a Demo</Button>
+            <div className="hidden sm:block">
+              <Button>Book a Demo</Button>
+            </div>
+            <MobileMenuButton />
           </div>
         </div>
       </header>
