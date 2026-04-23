@@ -789,14 +789,11 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-14">
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="rounded-xl border border-blue-500/20 bg-[linear-gradient(135deg,rgba(37,99,235,0.12),rgba(6,16,31,0.95))] p-5"
-            >
-              <div className="text-2xl font-semibold text-cyan-300">{stat.value}</div>
-              <div className="mt-1 text-[13px] text-slate-400">{stat.label}</div>
+            <div key={stat.label} className="text-center">
+              <div className="text-4xl font-bold text-cyan-300 lg:text-5xl">{stat.value}</div>
+              <div className="mt-2 text-sm text-slate-400">{stat.label}</div>
             </div>
           ))}
         </div>
