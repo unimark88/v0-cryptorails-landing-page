@@ -480,19 +480,19 @@ function FAQItem({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="rounded-lg border border-slate-800 bg-white/[0.02]">
+    <div className="rounded-xl border border-slate-800 bg-white/[0.02]">
       <button
-        className="flex w-full cursor-pointer items-center justify-between gap-3 px-5 py-4 text-left"
+        className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left"
         onClick={() => setOpen((v) => !v)}
       >
-        <span className="text-sm font-medium text-slate-100">{question}</span>
+        <span className="text-base font-medium text-slate-100">{question}</span>
         <span 
           className={cn(
-            "flex h-6 w-6 shrink-0 items-center justify-center rounded border border-slate-700 text-slate-400 transition-transform duration-200",
+            "flex h-7 w-7 shrink-0 items-center justify-center rounded-md border border-slate-700 text-slate-400 transition-transform duration-200",
             open && "rotate-45"
           )}
         >
-          <svg viewBox="0 0 12 12" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2">
+          <svg viewBox="0 0 12 12" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M6 2v8M2 6h8" />
           </svg>
         </span>
@@ -504,7 +504,7 @@ function FAQItem({
         )}
       >
         <div className="overflow-hidden">
-          <div className="px-5 pb-4 text-[13px] leading-6 text-slate-400">{answer}</div>
+          <div className="px-6 pb-5 text-sm leading-6 text-slate-400">{answer}</div>
         </div>
       </div>
     </div>
@@ -658,55 +658,55 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/5 py-16">
+      <section className="border-y border-white/5 py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center text-base font-medium uppercase tracking-[0.2em] text-slate-500">
+          <div className="text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
             Trusted by innovative companies worldwide
           </div>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-14 gap-y-7">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {trustedLogos.map((logo, idx) => (
               <div
                 key={logo}
-                className="flex items-center gap-3 text-lg text-slate-400"
+                className="flex items-center gap-2 text-sm text-slate-400"
               >
                 {idx === 0 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 )}
                 {idx === 1 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M8 12l2 2 4-4" />
                   </svg>
                 )}
                 {idx === 2 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 2L2 19h20L12 2z" />
                     <path d="M12 9v4M12 16h.01" />
                   </svg>
                 )}
                 {idx === 3 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <rect x="3" y="3" width="18" height="18" rx="2" />
                     <path d="M12 8v8M8 12h8" />
                   </svg>
                 )}
                 {idx === 4 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <circle cx="12" cy="12" r="4" />
                     <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
                   </svg>
                 )}
                 {idx === 5 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M4 4h16v16H4z" />
                     <path d="M4 4l16 16M20 4L4 20" />
                   </svg>
                 )}
                 {idx === 6 && (
-                  <svg viewBox="0 0 24 24" className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 6v6l4 2" />
                   </svg>
@@ -746,27 +746,27 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="text-center text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
+      <section className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+        <div className="text-center text-base font-medium uppercase tracking-[0.2em] text-slate-500">
           How our crypto payment gateway works
         </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-4">
+        <div className="mt-12 grid gap-8 lg:grid-cols-4">
           {steps.map((step, idx) => (
             <div key={step.number} className="relative text-center">
               {idx < steps.length - 1 && (
-                <div className="absolute left-[calc(50%+28px)] top-7 hidden h-[2px] w-[calc(100%-56px)] lg:block">
+                <div className="absolute left-[calc(50%+32px)] top-8 hidden h-[2px] w-[calc(100%-64px)] lg:block">
                   <div className="h-full w-full border-t-2 border-dashed border-slate-700" />
-                  <div className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-cyan-400/60" />
+                  <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400/60" />
                 </div>
               )}
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-lg border border-slate-700 bg-[#0A1222]">
-                <div className="flex h-10 w-10 items-center justify-center rounded-md border border-blue-500/30 bg-blue-500/10 text-blue-300">
-                  <Icon name={step.icon} className="h-5 w-5" />
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-xl border border-slate-700 bg-[#0A1222]">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-300">
+                  <Icon name={step.icon} className="h-6 w-6" />
                 </div>
               </div>
-              <div className="mb-1.5 text-xs font-medium text-slate-500">{step.number}</div>
-              <h3 className="text-sm font-semibold text-slate-100">{step.title}</h3>
-              <p className="mx-auto mt-2 max-w-[200px] text-xs leading-5 text-slate-400">{step.description}</p>
+              <div className="mb-2 text-sm font-medium text-slate-500">{step.number}</div>
+              <h3 className="text-base font-semibold text-slate-100">{step.title}</h3>
+              <p className="mx-auto mt-3 max-w-[220px] text-sm leading-6 text-slate-400">{step.description}</p>
             </div>
           ))}
         </div>
@@ -813,19 +813,19 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="developers" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+      <section id="developers" className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+        <div className="grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="flex flex-col justify-center">
             <SectionHeading
               eyebrow="Developers"
               title="API-first. Developer ready."
               description="Integrate wallet creation, payment tracking, fund consolidation, and webhooks in minutes."
             />
-            <div className="mt-6">
+            <div className="mt-8">
               <Button>Explore API Docs</Button>
             </div>
 
-            <div className="mt-6 space-y-2">
+            <div className="mt-8 space-y-3">
               {[
                 { title: "Sandbox Environment", desc: "Test your integration safely before going live.", icon: "sandbox" },
                 { title: "Detailed Documentation", desc: "Everything your team needs to integrate quickly.", icon: "docs" },
@@ -833,14 +833,14 @@ export default function CryptoRailsLandingPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="flex items-start gap-3 rounded-md border border-slate-800 bg-white/[0.02] p-3"
+                  className="flex items-start gap-4 rounded-lg border border-slate-800 bg-white/[0.02] p-4"
                 >
-                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded border border-slate-700 bg-slate-900/80 text-blue-300">
-                    <Icon name={item.icon} className="h-4 w-4" />
+                  <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-slate-700 bg-slate-900/80 text-blue-300">
+                    <Icon name={item.icon} className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-sm font-medium text-slate-100">{item.title}</div>
-                    <div className="text-xs leading-5 text-slate-400">{item.desc}</div>
+                    <div className="text-base font-medium text-slate-100">{item.title}</div>
+                    <div className="text-sm leading-6 text-slate-400">{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -851,11 +851,11 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section id="resources" className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="mb-8 text-center text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
+      <section id="resources" className="mx-auto max-w-7xl px-6 py-20 lg:px-8 lg:py-24">
+        <div className="mb-10 text-center text-base font-medium uppercase tracking-[0.2em] text-slate-500">
           Frequently asked questions
         </div>
-        <div className="grid gap-3 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           {faqs.map((faq) => (
             <FAQItem key={faq.question} {...faq} />
           ))}
