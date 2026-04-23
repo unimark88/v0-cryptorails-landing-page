@@ -595,10 +595,7 @@ export default function CryptoRailsLandingPage() {
             </div>
 
             <h1 className="max-w-xl text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl lg:text-4xl">
-              Crypto Payment Gateway Infrastructure for{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">
-                global businesses
-              </span>
+              Crypto Payment Gateway Infrastructure for <span className="bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">global businesses</span>
             </h1>
 
             <p className="mt-5 max-w-lg text-xs leading-6 text-slate-400 sm:text-sm">
@@ -612,28 +609,34 @@ export default function CryptoRailsLandingPage() {
 
             <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[11px] text-slate-400">
               <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M13.5 4.5L6 12 2.5 8.5" />
+                </svg>
                 Enterprise-grade security
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M13.5 4.5L6 12 2.5 8.5" />
+                </svg>
                 99.99% system uptime
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
-                Global coverage, local support
+                <svg viewBox="0 0 16 16" className="h-3.5 w-3.5 text-emerald-400" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M13.5 4.5L6 12 2.5 8.5" />
+                </svg>
+                Global coverage
               </div>
             </div>
           </div>
 
           <div className="flex items-center justify-center lg:pl-4">
-            <div className="relative w-full max-w-2xl overflow-hidden rounded-xl border border-slate-800 bg-[#0A1222] shadow-2xl shadow-blue-900/30">
+            <div className="relative w-full max-w-3xl overflow-hidden rounded-xl border border-slate-800 bg-[#0A1222] shadow-2xl shadow-blue-900/30">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
-              <div className="relative h-[320px] w-full overflow-hidden sm:h-[380px] lg:h-[420px]">
+              <div className="relative h-[340px] w-full overflow-hidden sm:h-[400px] lg:h-[460px]">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tof8I6e63T99sEmSZ7Rr578b0zdDnt.png"
                   alt="CryptoRails Admin Dashboard showing fund consolidation flow, wallet management, and real-time activity monitoring"
-                  className="absolute left-0 top-0 w-[140%] max-w-none origin-top-left scale-100"
+                  className="absolute left-0 top-0 w-[150%] max-w-none origin-top-left"
                 />
               </div>
             </div>
