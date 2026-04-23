@@ -680,21 +680,46 @@ export default function CryptoRailsLandingPage() {
                 key={logo}
                 className="flex items-center gap-1.5 text-xs text-slate-400"
               >
-                {idx % 3 === 0 && (
+                {idx === 0 && (
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                   </svg>
                 )}
-                {idx % 3 === 1 && (
+                {idx === 1 && (
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8 12l2 2 4-4" />
+                  </svg>
+                )}
+                {idx === 2 && (
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M12 2L2 19h20L12 2z" />
+                    <path d="M12 9v4M12 16h.01" />
+                  </svg>
+                )}
+                {idx === 3 && (
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M12 8v8M8 12h8" />
+                  </svg>
+                )}
+                {idx === 4 && (
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="4" />
+                    <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
+                  </svg>
+                )}
+                {idx === 5 && (
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M4 4h16v16H4z" />
+                    <path d="M4 4l16 16M20 4L4 20" />
+                  </svg>
+                )}
+                {idx === 6 && (
                   <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 6v6l4 2" />
-                  </svg>
-                )}
-                {idx % 3 === 2 && (
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <rect x="3" y="3" width="18" height="18" rx="2" />
-                    <path d="M9 9h6v6H9z" />
                   </svg>
                 )}
                 <span className="font-medium">{logo}</span>
@@ -750,10 +775,11 @@ export default function CryptoRailsLandingPage() {
                 </div>
               )}
               <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl border border-slate-700 bg-[#0A1222]">
-                <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 text-xs font-semibold text-blue-300">
-                  {step.number}
+                <div className="flex h-8 w-8 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10 text-blue-300">
+                  <Icon name={step.icon} className="h-4 w-4" />
                 </div>
               </div>
+              <div className="mb-1 text-[10px] font-medium text-slate-500">{step.number}</div>
               <h3 className="text-xs font-semibold text-slate-100">{step.title}</h3>
               <p className="mx-auto mt-2 max-w-[180px] text-[10px] leading-4 text-slate-400">{step.description}</p>
             </div>
