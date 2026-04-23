@@ -269,11 +269,14 @@ function Button({
   variant?: "primary" | "secondary";
 }) {
   return variant === "primary" ? (
-    <button className="inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-sm font-medium text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:bg-blue-500">
+    <button className="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2.5 text-sm font-medium text-white shadow-[0_8px_30px_rgba(37,99,235,0.35)] transition hover:bg-blue-500">
       {children}
+      <svg viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M5 10h10M11 6l4 4-4 4" />
+      </svg>
     </button>
   ) : (
-    <button className="inline-flex items-center justify-center rounded-xl border border-slate-700 bg-white/[0.02] px-5 py-3 text-sm font-medium text-slate-100 transition hover:border-slate-600 hover:bg-white/[0.04]">
+    <button className="inline-flex items-center justify-center rounded-lg border border-slate-700 bg-white/[0.02] px-4 py-2.5 text-sm font-medium text-slate-100 transition hover:border-slate-600 hover:bg-white/[0.04]">
       {children}
     </button>
   );
@@ -372,16 +375,16 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="rounded-3xl border border-slate-800 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.015))] p-7 shadow-[0_10px_50px_rgba(0,0,0,0.25)]">
-      <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10 text-blue-300">
-        <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
+    <div className="rounded-2xl border border-slate-800 bg-white/[0.02] p-5">
+      <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-300">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
           <rect x="4" y="5" width="16" height="14" rx="3" />
           <path d="M8 10h8" />
           <path d="M8 14h5" />
         </svg>
       </div>
-      <h3 className="text-lg font-semibold text-slate-100">{title}</h3>
-      <p className="mt-4 text-sm leading-7 text-slate-400">{description}</p>
+      <h3 className="text-sm font-semibold text-slate-100">{title}</h3>
+      <p className="mt-2 text-xs leading-5 text-slate-400">{description}</p>
     </div>
   );
 }
@@ -576,16 +579,18 @@ function FAQItem({
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="rounded-3xl border border-slate-800 bg-white/[0.02]">
+    <div className="rounded-2xl border border-slate-800 bg-white/[0.02]">
       <button
-        className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left"
+        className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left"
         onClick={() => setOpen((v) => !v)}
       >
-        <span className="text-lg font-semibold text-slate-100">{question}</span>
-        <span className="text-slate-400">{open ? "−" : "+"}</span>
+        <span className="text-sm font-medium text-slate-100">{question}</span>
+        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md border border-slate-700 text-slate-400">
+          {open ? "−" : "+"}
+        </span>
       </button>
       {open ? (
-        <div className="px-6 pb-6 text-sm leading-7 text-slate-400">{answer}</div>
+        <div className="px-5 pb-5 text-sm leading-6 text-slate-400">{answer}</div>
       ) : null}
     </div>
   );
@@ -728,18 +733,35 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/5 py-12">
+      <section className="border-y border-white/5 py-10">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center text-xs font-medium uppercase tracking-[0.24em] text-slate-500">
             Trusted by innovative companies worldwide
           </div>
-          <div className="mt-9 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-7">
-            {trustedLogos.map((logo) => (
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+            {trustedLogos.map((logo, idx) => (
               <div
                 key={logo}
-                className="flex h-14 items-center justify-center rounded-2xl border border-slate-800 bg-white/[0.02] text-sm font-medium text-slate-400"
+                className="flex items-center gap-2 text-sm text-slate-400"
               >
-                {logo}
+                {idx % 3 === 0 && (
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                  </svg>
+                )}
+                {idx % 3 === 1 && (
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                  </svg>
+                )}
+                {idx % 3 === 2 && (
+                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M9 9h6v6H9z" />
+                  </svg>
+                )}
+                <span className="font-medium">{logo}</span>
               </div>
             ))}
           </div>
@@ -747,126 +769,134 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-        <div className="grid gap-14 lg:grid-cols-[1fr_1fr] lg:items-start">
-          <SectionHeading
-            eyebrow="Why CryptoRails"
-            title="A scalable crypto payment gateway for modern businesses"
-            description="CryptoRails provides a full-stack crypto payment gateway designed for businesses that need reliable, scalable, and structured payment infrastructure."
-          />
-          <div className="space-y-7 text-base leading-8 text-slate-400">
-            <p>
-              Unlike traditional crypto payment solutions, CryptoRails uses a
-              segregated wallet architecture, allowing each user, transaction, or
-              merchant to receive payments through a unique wallet address.
-            </p>
-            <p>
-              This improves payment tracking, reconciliation, and operational
-              efficiency, making it ideal for high-volume crypto payment processing
-              across industries such as fintech, trading platforms, marketplaces,
-              and gaming platforms.
-            </p>
-            <p>
-              CryptoRails also enables automatic fund consolidation, allowing
-              businesses to move assets from multiple wallets into a central
-              treasury wallet efficiently. Whether you are processing USDT payments,
-              stablecoin settlements, or multi-chain crypto transactions,
-              CryptoRails delivers the infrastructure needed to manage funds
-              securely and efficiently.
-            </p>
+        <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <SectionHeading
+              eyebrow="Why CryptoRails"
+              title="A scalable crypto payment gateway for modern businesses"
+              description="CryptoRails provides a full-stack crypto payment gateway designed for businesses that need reliable, scalable, and structured payment infrastructure."
+            />
+            <div className="mt-8 space-y-5 text-sm leading-7 text-slate-400">
+              <p>
+                Unlike traditional crypto payment solutions, CryptoRails uses a
+                segregated wallet architecture, allowing each user, transaction, or
+                merchant to receive payments through a unique wallet address.
+              </p>
+              <p>
+                This approach improves payment tracking, reconciliation, and operational
+                efficiency, making it ideal for high-volume crypto payment processing
+                across industries such as fintech, trading platforms, marketplaces,
+                and gaming platforms.
+              </p>
+              <p>
+                CryptoRails also enables automatic fund consolidation, allowing
+                businesses to move assets from multiple wallets into a central
+                treasury wallet efficiently.
+              </p>
+              <p>
+                Whether you are processing USDT payments, stablecoin settlements, or
+                multi-chain crypto transactions, CryptoRails delivers the infrastructure
+                needed to manage funds securely and efficiently.
+              </p>
+            </div>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {featureCards.map((feature) => (
+              <FeatureCard key={feature.title} {...feature} />
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-        <SectionHeading
-          center
-          title="Built for modern crypto payment operations"
-          description="Structured wallet architecture, real-time monitoring, and automated fund consolidation for teams operating crypto payment flows at scale."
-        />
-        <div className="mt-16 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
-          {featureCards.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} />
-          ))}
-        </div>
-      </section>
-
       <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
-        <div className="rounded-[32px] border border-slate-800 bg-[linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01))] px-8 py-12 sm:px-10 sm:py-14">
-          <SectionHeading
-            center
-            title="How our crypto payment gateway works"
-            description="A streamlined wallet-to-treasury flow built for visibility, control, and scalable crypto payment processing."
-          />
-          <div className="mt-16 grid gap-10 lg:grid-cols-4">
-            {steps.map((step, idx) => (
-              <div key={step.number} className="relative">
-                {idx < steps.length - 1 ? (
-                  <div className="absolute right-[-16px] top-7 hidden h-px w-8 bg-gradient-to-r from-blue-500/60 to-cyan-400/30 lg:block" />
-                ) : null}
-                <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-500/20 bg-blue-500/10 text-sm font-semibold text-blue-300">
+        <div className="text-center text-xs font-medium uppercase tracking-[0.24em] text-slate-500">
+          How our crypto payment gateway works
+        </div>
+        <div className="mt-12 grid gap-6 lg:grid-cols-4">
+          {steps.map((step, idx) => (
+            <div key={step.number} className="relative text-center">
+              {/* Connector line */}
+              {idx < steps.length - 1 && (
+                <div className="absolute left-[calc(50%+32px)] top-8 hidden h-[2px] w-[calc(100%-64px)] lg:block">
+                  <div className="h-full w-full border-t-2 border-dashed border-slate-700" />
+                  <div className="absolute right-0 top-1/2 h-2 w-2 -translate-y-1/2 rounded-full bg-cyan-400/60" />
+                </div>
+              )}
+              <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl border border-slate-700 bg-[#0A1222]">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/30 bg-blue-500/10 text-sm font-semibold text-blue-300">
                   {step.number}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-100">{step.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-slate-400">{step.description}</p>
+              </div>
+              <h3 className="text-base font-semibold text-slate-100">{step.title}</h3>
+              <p className="mx-auto mt-3 max-w-[220px] text-sm leading-6 text-slate-400">{step.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+          <div>
+            <div className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
+              Built for businesses
+            </div>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-50 sm:text-3xl">
+              Moving crypto at scale
+            </h2>
+            <p className="mt-5 text-sm leading-7 text-slate-400">
+              From payment processors to marketplaces, CryptoRails supports teams that need structured crypto payment infrastructure, wallet control, and treasury consolidation.
+            </p>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {solutions.map((solution) => (
+              <div
+                key={solution.title}
+                className="rounded-2xl border border-slate-800 bg-white/[0.02] p-5"
+              >
+                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-700 bg-slate-900/80 text-blue-300">
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                  >
+                    <rect x="4" y="5" width="16" height="14" rx="3" />
+                    <path d="M8 10h8" />
+                    <path d="M8 14h5" />
+                  </svg>
+                </div>
+                <h3 className="text-sm font-semibold text-slate-100">{solution.title}</h3>
+                <p className="mt-2 text-xs leading-6 text-slate-400">{solution.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-        <SectionHeading
-          center
-          title="Built for businesses moving crypto at scale"
-          description="From payment processors to marketplaces, CryptoRails supports teams that need structured crypto payment infrastructure, wallet control, and treasury consolidation."
-        />
-        <div className="mt-16 grid gap-7 md:grid-cols-2 xl:grid-cols-3">
-          {solutions.map((solution) => (
+      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {stats.map((stat) => (
             <div
-              key={solution.title}
-              className="rounded-3xl border border-slate-800 bg-white/[0.02] p-7"
+              key={stat.label}
+              className="rounded-2xl border border-blue-500/20 bg-[linear-gradient(135deg,rgba(37,99,235,0.12),rgba(6,16,31,0.95))] p-5"
             >
-              <div className="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-700 bg-slate-900/80 text-blue-300">
-                <svg
-                  viewBox="0 0 24 24"
-                  className="h-6 w-6"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.8"
-                >
-                  <rect x="4" y="5" width="16" height="14" rx="3" />
-                  <path d="M8 10h8" />
-                  <path d="M8 14h5" />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold text-slate-100">{solution.title}</h3>
-              <p className="mt-4 text-sm leading-7 text-slate-400">{solution.description}</p>
+              <div className="text-2xl font-semibold text-cyan-300">{stat.value}</div>
+              <div className="mt-2 text-xs text-slate-400">{stat.label}</div>
             </div>
           ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 py-10 lg:px-8 lg:py-14">
-        <div className="relative overflow-hidden rounded-[32px] border border-slate-800 bg-[#0A1222] px-8 py-12 sm:px-10 sm:py-14">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_right,rgba(37,99,235,0.15),transparent_28%),radial-gradient(circle_at_left,rgba(34,211,238,0.08),transparent_20%)]" />
-          <div className="relative grid gap-10 md:grid-cols-2 xl:grid-cols-5">
-            {stats.map((stat) => (
-              <div key={stat.label}>
-                <div className="text-3xl font-semibold text-slate-50">{stat.value}</div>
-                <div className="mt-3 text-sm text-slate-400">{stat.label}</div>
-              </div>
-            ))}
-            <div className="xl:col-span-1">
-              <div className="rounded-2xl border border-slate-800 bg-white/[0.03] p-5">
-                <div className="text-sm font-medium text-slate-100">
-                  Built for global businesses
-                </div>
-                <div className="mt-3 text-sm leading-7 text-slate-400">
-                  Trusted for scalable crypto payment processing, treasury visibility,
-                  and secure wallet infrastructure.
-                </div>
-              </div>
+          <div className="rounded-2xl border border-slate-800 bg-white/[0.02] p-5">
+            <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-300">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
             </div>
+            <div className="text-sm font-medium text-slate-100">Built for global businesses</div>
+            <p className="mt-2 text-xs leading-5 text-slate-400">
+              Trusted for scalable crypto payment processing, treasury visibility, and secure wallet infrastructure.
+            </p>
           </div>
         </div>
       </section>
@@ -879,31 +909,55 @@ export default function CryptoRailsLandingPage() {
               title="API-first. Developer ready."
               description="Integrate wallet creation, payment tracking, fund consolidation, and webhooks in minutes with a programmable crypto payment infrastructure layer."
             />
-            <div className="mt-9">
-              <Button variant="secondary">Explore API Docs</Button>
+            <div className="mt-8">
+              <Button>Explore API Docs</Button>
             </div>
 
-            <div className="mt-10 space-y-4">
+            <div className="mt-8 space-y-3">
               {[
                 {
                   title: "Sandbox Environment",
                   desc: "Test your crypto payment gateway integration safely before going live.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <rect x="4" y="4" width="16" height="16" rx="2" />
+                      <path d="M9 9h6v6H9z" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "Detailed Documentation",
                   desc: "Everything your team needs to integrate wallet flows and treasury workflows quickly.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                      <path d="M14 2v6h6" />
+                      <path d="M16 13H8" />
+                      <path d="M16 17H8" />
+                    </svg>
+                  ),
                 },
                 {
                   title: "24/7 Developer Support",
                   desc: "Technical help for integration, monitoring, and payment infrastructure operations.",
+                  icon: (
+                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                  ),
                 },
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="rounded-2xl border border-slate-800 bg-white/[0.02] p-5"
+                  className="flex items-start gap-3 rounded-xl border border-slate-800 bg-white/[0.02] p-4"
                 >
-                  <div className="text-sm font-semibold text-slate-100">{item.title}</div>
-                  <div className="mt-2 text-sm leading-7 text-slate-400">{item.desc}</div>
+                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-slate-700 bg-slate-900/80 text-blue-300">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-slate-100">{item.title}</div>
+                    <div className="mt-1 text-xs leading-5 text-slate-400">{item.desc}</div>
+                  </div>
                 </div>
               ))}
             </div>
@@ -958,38 +1012,11 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-28">
-        <SectionHeading
-          center
-          title="Why choose CryptoRails as your crypto payment gateway"
-          description="CryptoRails is designed for businesses that require more than a basic crypto payment gateway."
-        />
-        <div className="mx-auto mt-12 max-w-4xl space-y-7 text-center text-base leading-8 text-slate-400">
-          <p>
-            Our platform combines wallet infrastructure, payment monitoring, and
-            automated fund consolidation into a single system, giving you full
-            control over your crypto payment operations.
-          </p>
-          <p>
-            With support for USDT payment processing, multi-chain compatibility,
-            and a developer-friendly API, CryptoRails enables companies to scale
-            their crypto payment systems without operational complexity.
-          </p>
-          <p>
-            From payment processors and OTC desks to marketplaces and global
-            fintech platforms, CryptoRails provides the backend infrastructure
-            needed to handle crypto payments reliably and efficiently.
-          </p>
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
+        <div className="mb-10 text-center text-xs font-medium uppercase tracking-[0.24em] text-slate-500">
+          Frequently asked questions
         </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-6 pb-24 lg:px-8 lg:pb-32">
-        <SectionHeading
-          center
-          title="Frequently asked questions about crypto payment gateways"
-          description="Answers to common questions about crypto payment processing, wallet infrastructure, and treasury consolidation."
-        />
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
+        <div className="grid gap-4 lg:grid-cols-2">
           {faqs.map((faq) => (
             <FAQItem key={faq.question} {...faq} />
           ))}
@@ -1017,18 +1044,33 @@ export default function CryptoRailsLandingPage() {
       </section>
 
       <footer className="border-t border-white/5">
-        <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-          <div className="grid gap-14 lg:grid-cols-[1.1fr_2fr]">
+        <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
+          <div className="grid gap-10 lg:grid-cols-[1fr_2.5fr]">
             <div>
               <CryptoRailsLogo />
-              <p className="mt-5 max-w-sm text-sm leading-7 text-slate-400">
-                Modern crypto payment gateway infrastructure for businesses that
-                need segregated wallets, secure treasury flows, and scalable
-                fund consolidation.
+              <p className="mt-4 max-w-xs text-xs leading-6 text-slate-400">
+                Modern crypto payment gateway infrastructure for businesses that need segregated wallets, secure treasury flows, and scalable fund consolidation.
               </p>
+              <div className="mt-5 flex gap-3">
+                <a href="#" className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-800 text-slate-400 transition hover:border-slate-700 hover:text-slate-300">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+                <a href="#" className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-800 text-slate-400 transition hover:border-slate-700 hover:text-slate-300">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                  </svg>
+                </a>
+                <a href="#" className="flex h-8 w-8 items-center justify-center rounded-lg border border-slate-800 text-slate-400 transition hover:border-slate-700 hover:text-slate-300">
+                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                  </svg>
+                </a>
+              </div>
             </div>
 
-            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-5">
               <FooterColumn
                 title="Product"
                 items={["Wallets", "Consolidation", "Monitoring", "API & Webhooks"]}
@@ -1052,7 +1094,7 @@ export default function CryptoRailsLandingPage() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col gap-4 border-t border-slate-800 pt-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-10 flex flex-col gap-4 border-t border-slate-800 pt-6 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
             <div>© 2026 CryptoRails. All rights reserved.</div>
             <div>Built for scale. Secured for trust.</div>
           </div>
