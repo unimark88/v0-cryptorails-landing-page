@@ -308,30 +308,18 @@ function ThemeToggle({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: bo
         "flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border transition-all duration-300",
         isDark 
           ? "border-slate-700 bg-white/[0.02] hover:border-slate-600" 
-          : "border-slate-300 bg-slate-100 hover:border-slate-400"
+          : "border-slate-400 bg-slate-700 hover:bg-slate-600"
       )}
       aria-label="Toggle theme"
     >
       {isDark ? (
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-          <defs>
-            <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#fbbf24" />
-              <stop offset="100%" stopColor="#f97316" />
-            </linearGradient>
-          </defs>
-          <circle cx="12" cy="12" r="4" stroke="url(#sunGradient)" strokeWidth="2" />
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" stroke="url(#sunGradient)" strokeWidth="2" strokeLinecap="round" />
+        <svg viewBox="0 0 24 24" className="h-5 w-5 text-amber-400" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
         </svg>
       ) : (
-        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none">
-          <defs>
-            <linearGradient id="moonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#6366f1" />
-              <stop offset="100%" stopColor="#3b82f6" />
-            </linearGradient>
-          </defs>
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="url(#moonGradient)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <svg viewBox="0 0 24 24" className="h-5 w-5 text-slate-200" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         </svg>
       )}
     </button>
@@ -373,7 +361,7 @@ function Button({
       "inline-flex cursor-pointer items-center justify-center rounded-md border px-4 py-2 text-sm font-medium transition",
       isDark 
         ? "border-slate-700 bg-white/[0.02] text-slate-100 hover:border-slate-600 hover:bg-white/[0.04]"
-        : "border-slate-300 bg-slate-100 text-slate-700 hover:border-slate-400 hover:bg-slate-200"
+        : "border-slate-300/40 bg-white/80 text-slate-600 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:bg-white"
     )}>
       {children}
     </button>
@@ -395,7 +383,7 @@ function MobileMenuButton({ isDark = true }: { isDark?: boolean }) {
         "flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border transition lg:hidden",
         isDark 
           ? "border-slate-700 bg-white/[0.02] text-slate-300 hover:border-slate-600 hover:text-white"
-          : "border-slate-300 bg-slate-100 text-slate-600 hover:border-slate-400 hover:text-slate-900"
+          : "border-slate-300/40 bg-white/80 text-slate-600 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:text-slate-700"
       )}
       onClick={() => {
         const menu = document.getElementById("mobile-menu");
@@ -417,11 +405,11 @@ function MobileMenu({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: boo
       id="mobile-menu"
       className={cn(
         "fixed inset-0 z-[100] hidden backdrop-blur-xl lg:hidden",
-        isDark ? "bg-[#050816]/98" : "bg-white/98"
+        isDark ? "bg-[#050816]/98" : "bg-[#eef0f4]/98"
       )}
     >
       <div className="flex h-full flex-col">
-        <div className={cn("flex items-center justify-between border-b px-6 py-3", isDark ? "border-white/5" : "border-slate-200")}>
+        <div className={cn("flex items-center justify-between border-b px-6 py-3", isDark ? "border-white/5" : "border-slate-300/30")}>
           <CryptoRailsLogo isDark={isDark} />
           <div className="flex items-center gap-2">
             <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
@@ -430,7 +418,7 @@ function MobileMenu({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: boo
                 "flex h-9 w-9 cursor-pointer items-center justify-center rounded-md border transition",
                 isDark 
                   ? "border-slate-700 bg-white/[0.02] text-slate-300 hover:border-slate-600 hover:text-white"
-                  : "border-slate-300 bg-slate-100 text-slate-600 hover:border-slate-400 hover:text-slate-900"
+                  : "border-slate-300/40 bg-white/80 text-slate-600 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:text-slate-700"
               )}
               onClick={() => {
                 const menu = document.getElementById("mobile-menu");
@@ -453,7 +441,7 @@ function MobileMenu({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: boo
               href={link.href}
               className={cn(
                 "rounded-lg px-4 py-3 text-base font-medium transition",
-                isDark ? "text-slate-200 hover:bg-white/5 hover:text-white" : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                isDark ? "text-slate-200 hover:bg-white/5 hover:text-white" : "text-slate-600 hover:bg-white/60 hover:text-slate-700"
               )}
               onClick={() => {
                 const menu = document.getElementById("mobile-menu");
@@ -467,13 +455,13 @@ function MobileMenu({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: boo
           ))}
         </nav>
         
-        <div className={cn("border-t p-6", isDark ? "border-white/5" : "border-slate-200")}>
+        <div className={cn("border-t p-6", isDark ? "border-white/5" : "border-slate-300/30")}>
           <div className="flex flex-col gap-3">
             <button className={cn(
               "w-full cursor-pointer rounded-md border px-4 py-3 text-sm font-medium transition",
               isDark 
                 ? "border-slate-700 bg-white/[0.02] text-slate-100 hover:border-slate-600 hover:bg-white/[0.04]"
-                : "border-slate-300 bg-slate-100 text-slate-700 hover:border-slate-400 hover:bg-slate-200"
+                : "border-slate-300/40 bg-white/80 text-slate-600 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:bg-white"
             )}>
               Log in
             </button>
@@ -507,11 +495,11 @@ function SectionHeading({
           {eyebrow}
         </div>
       ) : null}
-      <h2 className={cn("text-2xl font-semibold tracking-tight sm:text-3xl", isDark ? "text-slate-50" : "text-slate-900")}>
+      <h2 className={cn("text-2xl font-semibold tracking-tight sm:text-3xl", isDark ? "text-slate-50" : "text-slate-800")}>
         {title}
       </h2>
       {description ? (
-        <p className={cn("mt-3 text-[13px] leading-6", isDark ? "text-slate-400" : "text-slate-600")}>
+        <p className={cn("mt-3 text-sm leading-6", isDark ? "text-slate-400" : "text-slate-600")}>
           {description}
         </p>
       ) : null}
@@ -646,13 +634,13 @@ function FeatureCard({
   return (
     <div className={cn(
       "rounded-xl border p-5 transition-colors",
-      isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-200 bg-white shadow-sm"
+      isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
     )}>
       <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg border border-blue-500/20 bg-blue-500/10">
         <Icon name={icon} className="h-6 w-6" />
       </div>
-      <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-900")}>{title}</h3>
-      <p className={cn("mt-2 text-xs leading-5", isDark ? "text-slate-400" : "text-slate-600")}>{description}</p>
+      <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{title}</h3>
+      <p className={cn("mt-2 text-sm leading-5", isDark ? "text-slate-400" : "text-slate-500")}>{description}</p>
     </div>
   );
 }
@@ -671,17 +659,17 @@ function FAQItem({
   return (
     <div className={cn(
       "rounded-xl border transition-colors",
-      isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-200 bg-white shadow-sm"
+      isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]"
     )}>
       <button
         className="flex w-full cursor-pointer items-center justify-between gap-4 px-6 py-5 text-left"
         onClick={() => setOpen((v) => !v)}
       >
-        <span className={cn("text-base font-medium", isDark ? "text-slate-100" : "text-slate-900")}>{question}</span>
+        <span className={cn("text-base font-medium", isDark ? "text-slate-100" : "text-slate-700")}>{question}</span>
         <span 
           className={cn(
             "flex h-7 w-7 shrink-0 items-center justify-center rounded-md border transition-transform duration-200",
-            isDark ? "border-slate-700 text-slate-400" : "border-slate-300 text-slate-500",
+            isDark ? "border-slate-700 text-slate-400" : "border-slate-300/60 text-slate-500",
             open && "rotate-45"
           )}
         >
@@ -697,7 +685,7 @@ function FAQItem({
         )}
       >
         <div className="overflow-hidden">
-          <div className={cn("px-6 pb-5 text-sm leading-6", isDark ? "text-slate-400" : "text-slate-600")}>{answer}</div>
+          <div className={cn("px-6 pb-5 text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{answer}</div>
         </div>
       </div>
     </div>
@@ -715,11 +703,11 @@ function FooterColumn({
 }) {
   return (
     <div>
-      <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-900")}>{title}</h3>
-      <ul className={cn("mt-3 space-y-2.5 text-xs", isDark ? "text-slate-400" : "text-slate-500")}>
+      <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-800")}>{title}</h3>
+      <ul className={cn("mt-3 space-y-2.5 text-sm", isDark ? "text-slate-400" : "text-slate-500")}>
         {items.map((item) => (
           <li key={item.label}>
-            <a href={item.href} className={cn("cursor-pointer transition", isDark ? "hover:text-slate-200" : "hover:text-slate-900")}>
+            <a href={item.href} className={cn("cursor-pointer transition", isDark ? "hover:text-slate-200" : "hover:text-slate-700")}>
               {item.label}
             </a>
           </li>
@@ -770,7 +758,7 @@ export default function CryptoRailsLandingPage() {
   return (
     <main className={cn(
       "min-h-screen overflow-x-hidden transition-colors duration-300",
-      isDark ? "bg-[#050816] text-white" : "bg-slate-50 text-slate-900"
+      isDark ? "bg-[#050816] text-white" : "bg-[#eef0f4] text-slate-700"
     )}>
       <script
         type="application/ld+json"
@@ -784,29 +772,29 @@ export default function CryptoRailsLandingPage() {
         </>
       )}
       {!isDark && (
-        <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.08),transparent_28%),radial-gradient(circle_at_top_right,rgba(34,211,238,0.05),transparent_24%)]" />
+        <div className="pointer-events-none fixed inset-0 -z-10 bg-[linear-gradient(180deg,#e8ebf0_0%,#eef0f4_50%,#e8ebf0_100%)] bg-[radial-gradient(circle_at_top_left,rgba(37,99,235,0.04),transparent_35%),radial-gradient(circle_at_top_right,rgba(34,211,238,0.03),transparent_30%)]" />
       )}
 
       <MobileMenu isDark={isDark} setIsDark={setIsDark} />
       
       <header className={cn(
         "sticky top-0 z-50 border-b backdrop-blur-xl transition-colors duration-300",
-        isDark ? "border-white/5 bg-[#050816]/80" : "border-slate-200 bg-white/80"
+        isDark ? "border-white/5 bg-[#050816]/80" : "border-slate-300/40 bg-[#eef0f4]/90"
       )}>
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-8">
           <CryptoRailsLogo isDark={isDark} />
 
           <nav className="hidden items-center gap-6 lg:flex">
-            <a href="#product" className={cn("cursor-pointer text-sm transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-900")}>Product</a>
-            <a href="#how-it-works" className={cn("cursor-pointer text-sm transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-900")}>How it works</a>
-            <a href="#solutions" className={cn("cursor-pointer text-sm transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-900")}>Solutions</a>
-            <a href="#developers" className={cn("cursor-pointer text-sm transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-900")}>Developers</a>
-            <a href="#faq" className={cn("cursor-pointer text-sm transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-900")}>FAQ</a>
+            <a href="#product" className={cn("cursor-pointer text-sm font-medium transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-800")}>Product</a>
+            <a href="#how-it-works" className={cn("cursor-pointer text-sm font-medium transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-800")}>How it works</a>
+            <a href="#solutions" className={cn("cursor-pointer text-sm font-medium transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-800")}>Solutions</a>
+            <a href="#developers" className={cn("cursor-pointer text-sm font-medium transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-800")}>Developers</a>
+            <a href="#faq" className={cn("cursor-pointer text-sm font-medium transition", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-800")}>FAQ</a>
           </nav>
 
           <div className="flex items-center gap-3">
             <ThemeToggle isDark={isDark} setIsDark={setIsDark} />
-            <button className={cn("hidden cursor-pointer text-sm transition sm:inline-flex", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-900")}>
+            <button className={cn("hidden cursor-pointer text-sm font-medium transition sm:inline-flex", isDark ? "text-slate-300 hover:text-white" : "text-slate-600 hover:text-slate-800")}>
               Log in
             </button>
             <div className="hidden sm:block">
@@ -827,11 +815,11 @@ export default function CryptoRailsLandingPage() {
               Crypto Payment Infrastructure
             </div>
 
-            <h1 className={cn("max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl", isDark ? "text-slate-50" : "text-slate-900")}>
+            <h1 className={cn("max-w-2xl text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl", isDark ? "text-slate-50" : "text-slate-800")}>
               Crypto Payment Gateway Infrastructure for <span className="whitespace-nowrap bg-gradient-to-r from-blue-400 to-cyan-300 bg-clip-text text-transparent">global businesses</span>
             </h1>
 
-            <p className={cn("mt-6 max-w-lg text-sm leading-7", isDark ? "text-slate-400" : "text-slate-600")}>
+            <p className={cn("mt-6 max-w-lg text-base leading-7", isDark ? "text-slate-400" : "text-slate-600")}>
               CryptoRails is a modern crypto payment gateway and wallet infrastructure platform that enables businesses to accept crypto payments, generate segregated deposit wallets, and automatically consolidate funds into a secure treasury wallet. Built for scalable USDT and multi-chain payment processing.
             </p>
 
@@ -840,7 +828,7 @@ export default function CryptoRailsLandingPage() {
               <Button variant="secondary" isDark={isDark}>Explore the Docs</Button>
             </div>
 
-            <div className={cn("mt-8 flex flex-wrap gap-x-6 gap-y-2 text-xs", isDark ? "text-slate-400" : "text-slate-600")}>
+            <div className={cn("mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm", isDark ? "text-slate-400" : "text-slate-600")}>
               <div className="flex items-center gap-2">
                 <svg viewBox="0 0 16 16" className="h-4 w-4 text-emerald-500" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M13.5 4.5L6 12 2.5 8.5" />
@@ -865,7 +853,7 @@ export default function CryptoRailsLandingPage() {
           <div className="flex items-center justify-center lg:pl-4">
             <div className={cn(
               "relative w-full max-w-3xl overflow-hidden rounded-xl border shadow-2xl",
-              isDark ? "border-slate-800 bg-[#0A1222] shadow-blue-900/30" : "border-slate-200 bg-white shadow-slate-300/50"
+              isDark ? "border-slate-800 bg-[#0A1222] shadow-blue-900/30" : "border-slate-300/30 bg-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
             )}>
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
               <div className="relative h-[340px] w-full overflow-hidden sm:h-[400px] lg:h-[460px]">
@@ -880,7 +868,7 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <section className={cn("border-y py-10", isDark ? "border-white/5" : "border-slate-200")}>
+      <section className={cn("border-y py-10", isDark ? "border-white/5" : "border-slate-300/30")}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
             Trusted by innovative companies worldwide
@@ -949,7 +937,7 @@ export default function CryptoRailsLandingPage() {
               description="CryptoRails provides a full-stack crypto payment gateway designed for businesses that need reliable, scalable, and structured payment infrastructure."
               isDark={isDark}
             />
-            <div className={cn("mt-5 space-y-3 text-[13px] leading-6", isDark ? "text-slate-400" : "text-slate-600")}>
+            <div className={cn("mt-5 space-y-3 text-sm leading-6", isDark ? "text-slate-400" : "text-slate-600")}>
               <p>
                 Unlike traditional crypto payment solutions, CryptoRails uses a segregated wallet architecture, allowing each user, transaction, or merchant to receive payments through a unique wallet address.
               </p>
@@ -982,14 +970,14 @@ export default function CryptoRailsLandingPage() {
                   <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400/60" />
                 </div>
               )}
-              <div className={cn("mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-xl border", isDark ? "border-slate-700 bg-[#0A1222]" : "border-slate-200 bg-white shadow-sm")}>
+              <div className={cn("mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-xl border", isDark ? "border-slate-700 bg-[#0A1222]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]")}>
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10">
                   <Icon name={step.icon} className="h-6 w-6" />
                 </div>
               </div>
               <div className="mb-2 text-sm font-medium text-slate-500">{step.number}</div>
-              <h3 className={cn("text-base font-semibold", isDark ? "text-slate-100" : "text-slate-900")}>{step.title}</h3>
-              <p className={cn("mx-auto mt-3 max-w-[220px] text-sm leading-6", isDark ? "text-slate-400" : "text-slate-600")}>{step.description}</p>
+              <h3 className={cn("text-base font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{step.title}</h3>
+              <p className={cn("mx-auto mt-3 max-w-[220px] text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{step.description}</p>
             </div>
           ))}
         </div>
@@ -1001,10 +989,10 @@ export default function CryptoRailsLandingPage() {
             <div className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-slate-500">
               Built for businesses
             </div>
-            <h2 className={cn("text-lg font-semibold tracking-tight sm:text-xl", isDark ? "text-slate-50" : "text-slate-900")}>
+            <h2 className={cn("text-lg font-semibold tracking-tight sm:text-xl", isDark ? "text-slate-50" : "text-slate-800")}>
               Moving crypto at scale
             </h2>
-            <p className={cn("mt-3 text-[13px] leading-6", isDark ? "text-slate-400" : "text-slate-600")}>
+            <p className={cn("mt-3 text-sm leading-6", isDark ? "text-slate-400" : "text-slate-600")}>
               From payment processors to marketplaces, CryptoRails supports teams that need structured crypto payment infrastructure, wallet control, and treasury consolidation.
             </p>
           </div>
@@ -1012,13 +1000,13 @@ export default function CryptoRailsLandingPage() {
             {solutions.map((solution) => (
               <div
                 key={solution.title}
-                className={cn("rounded-lg border p-4 transition-colors", isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-200 bg-white shadow-sm")}
+                className={cn("rounded-lg border p-4 transition-colors", isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]")}
               >
-                <div className={cn("mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md border", isDark ? "border-slate-700 bg-slate-900/80" : "border-slate-200 bg-slate-50")}>
+                <div className={cn("mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md border", isDark ? "border-slate-700 bg-slate-900/80" : "border-slate-300/30 bg-slate-100/80")}>
                   <Icon name={solution.icon} className="h-4 w-4" />
                 </div>
-                <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-900")}>{solution.title}</h3>
-                <p className={cn("mt-1.5 text-xs leading-5", isDark ? "text-slate-400" : "text-slate-600")}>{solution.description}</p>
+                <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{solution.title}</h3>
+                <p className={cn("mt-1.5 text-sm leading-5", isDark ? "text-slate-400" : "text-slate-500")}>{solution.description}</p>
               </div>
             ))}
           </div>
@@ -1057,14 +1045,14 @@ export default function CryptoRailsLandingPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className={cn("flex items-start gap-3 rounded-md border p-3", isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-200 bg-white shadow-sm")}
+                  className={cn("flex items-start gap-3 rounded-md border p-3", isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]")}
                 >
-                  <div className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded border", isDark ? "border-slate-700 bg-slate-900/80" : "border-slate-200 bg-slate-50")}>
+                  <div className={cn("flex h-7 w-7 shrink-0 items-center justify-center rounded border", isDark ? "border-slate-700 bg-slate-900/80" : "border-slate-300/30 bg-slate-100/80")}>
                     <Icon name={item.icon} className="h-4 w-4" />
                   </div>
                   <div>
-                    <div className={cn("text-sm font-medium", isDark ? "text-slate-100" : "text-slate-900")}>{item.title}</div>
-                    <div className={cn("text-xs leading-5", isDark ? "text-slate-400" : "text-slate-600")}>{item.desc}</div>
+                    <div className={cn("text-sm font-medium", isDark ? "text-slate-100" : "text-slate-700")}>{item.title}</div>
+                    <div className={cn("text-sm leading-5", isDark ? "text-slate-400" : "text-slate-500")}>{item.desc}</div>
                   </div>
                 </div>
               ))}
@@ -1088,17 +1076,17 @@ export default function CryptoRailsLandingPage() {
 
       <section id="company" className="mx-auto max-w-7xl px-6 pb-20 lg:px-8 lg:pb-24">
         <div className={cn(
-          "overflow-hidden rounded-xl border px-6 py-8 shadow-[0_12px_30px_rgba(37,99,235,0.1)] sm:px-8 sm:py-10",
+          "overflow-hidden rounded-xl border px-6 py-8 sm:px-8 sm:py-10",
           isDark 
-            ? "border-blue-500/20 bg-[linear-gradient(135deg,rgba(37,99,235,0.16),rgba(10,18,34,0.98)_42%,rgba(34,211,238,0.08))]"
-            : "border-blue-500/30 bg-[linear-gradient(135deg,rgba(37,99,235,0.08),rgba(255,255,255,0.98)_42%,rgba(34,211,238,0.05))]"
+            ? "border-blue-500/20 bg-[linear-gradient(135deg,rgba(37,99,235,0.16),rgba(10,18,34,0.98)_42%,rgba(34,211,238,0.08))] shadow-[0_12px_30px_rgba(37,99,235,0.1)]"
+            : "border-slate-300/30 bg-white/80 shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
         )}>
           <div className="grid gap-6 lg:grid-cols-[1.15fr_auto] lg:items-center">
             <div>
-              <h2 className={cn("text-xl font-semibold tracking-tight sm:text-2xl", isDark ? "text-slate-50" : "text-slate-900")}>
+              <h2 className={cn("text-xl font-semibold tracking-tight sm:text-2xl", isDark ? "text-slate-50" : "text-slate-700")}>
                 Upgrade your crypto payment infrastructure
               </h2>
-              <p className={cn("mt-3 max-w-lg text-[13px] leading-6", isDark ? "text-slate-300" : "text-slate-600")}>
+              <p className={cn("mt-3 max-w-lg text-sm leading-6", isDark ? "text-slate-300" : "text-slate-500")}>
                 Launch segregated wallet flows, automatically consolidate funds into your treasury, and operate global crypto payments with confidence.
               </p>
             </div>
@@ -1110,26 +1098,26 @@ export default function CryptoRailsLandingPage() {
         </div>
       </section>
 
-      <footer className={cn("border-t", isDark ? "border-white/5" : "border-slate-200")}>
+      <footer className={cn("border-t", isDark ? "border-white/5" : "border-slate-300/30")}>
         <div className="mx-auto max-w-7xl px-6 py-12 lg:px-8 lg:py-16">
           <div className="grid gap-8 lg:grid-cols-[1fr_2.5fr]">
             <div>
               <CryptoRailsLogo isDark={isDark} />
-              <p className={cn("mt-3 max-w-xs text-xs leading-5", isDark ? "text-slate-400" : "text-slate-500")}>
+              <p className={cn("mt-3 max-w-xs text-sm leading-5", isDark ? "text-slate-400" : "text-slate-500")}>
                 Modern crypto payment gateway infrastructure for businesses that need segregated wallets, secure treasury flows, and scalable fund consolidation.
               </p>
               <div className="mt-4 flex gap-2">
-                <a href="#" className={cn("flex h-7 w-7 cursor-pointer items-center justify-center rounded border transition", isDark ? "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300" : "border-slate-300 text-slate-500 hover:border-slate-400 hover:text-slate-700")}>
+                <a href="#" className={cn("flex h-7 w-7 cursor-pointer items-center justify-center rounded border transition", isDark ? "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300" : "border-slate-300/40 bg-white/60 text-slate-500 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:text-slate-700")}>
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                   </svg>
                 </a>
-                <a href="#" className={cn("flex h-7 w-7 cursor-pointer items-center justify-center rounded border transition", isDark ? "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300" : "border-slate-300 text-slate-500 hover:border-slate-400 hover:text-slate-700")}>
+                <a href="#" className={cn("flex h-7 w-7 cursor-pointer items-center justify-center rounded border transition", isDark ? "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300" : "border-slate-300/40 bg-white/60 text-slate-500 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:text-slate-700")}>
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
                   </svg>
                 </a>
-                <a href="#" className={cn("flex h-7 w-7 cursor-pointer items-center justify-center rounded border transition", isDark ? "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300" : "border-slate-300 text-slate-500 hover:border-slate-400 hover:text-slate-700")}>
+                <a href="#" className={cn("flex h-7 w-7 cursor-pointer items-center justify-center rounded border transition", isDark ? "border-slate-800 text-slate-400 hover:border-slate-700 hover:text-slate-300" : "border-slate-300/40 bg-white/60 text-slate-500 shadow-[0_1px_3px_rgba(0,0,0,0.04)] hover:border-slate-400 hover:text-slate-700")}>
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor">
                     <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
                   </svg>
@@ -1191,7 +1179,7 @@ export default function CryptoRailsLandingPage() {
             </div>
           </div>
 
-          <div className={cn("mt-8 flex flex-col gap-2 border-t pt-6 text-xs sm:flex-row sm:items-center sm:justify-between", isDark ? "border-slate-800 text-slate-500" : "border-slate-200 text-slate-500")}>
+          <div className={cn("mt-8 flex flex-col gap-2 border-t pt-6 text-sm sm:flex-row sm:items-center sm:justify-between", isDark ? "border-slate-800 text-slate-500" : "border-slate-300/30 text-slate-500")}>
             <div>© 2026 CryptoRails. All rights reserved.</div>
             <div>Built for scale. Secured for trust.</div>
           </div>
