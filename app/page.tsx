@@ -331,7 +331,7 @@ function CryptoRailsLogo({ isDark = true }: { isDark?: boolean }) {
     <div className="flex items-center gap-2">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img 
-        src="/logo.png" 
+        src="/logo.PNG" 
         alt="CryptoRails Logo" 
         width={32}
         height={32}
