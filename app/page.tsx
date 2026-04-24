@@ -266,10 +266,15 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     receive: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* USDT coin */}
+        {/* Bitcoin coin */}
         <circle cx="12" cy="12" r="9" />
-        <line x1="12" y1="8" x2="12" y2="17" stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
-        <line x1="7" y1="9" x2="17" y2="9" stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
+        {/* B symbol */}
+        <path d="M9 7v10M9 7h4a2.5 2.5 0 0 1 0 5H9m0 0h4.5a2.5 2.5 0 0 1 0 5H9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+        {/* Vertical lines through B */}
+        <line x1="10.5" y1="5" x2="10.5" y2="7" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="13" y1="5" x2="13" y2="7" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="10.5" y1="17" x2="10.5" y2="19" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+        <line x1="13" y1="17" x2="13" y2="19" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     ),
     // Developer icons
