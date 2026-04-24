@@ -264,18 +264,15 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Tether logo - pentagon shape with T and ellipse */}
-        <path 
-          d="M12 2L2 8v2l10 12 10-12V8L12 2z" 
-          fill={strokeColor}
-        />
-        {/* White T */}
-        <rect x="5" y="5" width="14" height="3" fill="white" />
-        <rect x="10" y="5" width="4" height="14" fill="white" />
+        {/* Tether logo - pentagon outline with T and ellipse */}
+        <path d="M12 2L2 8v2l10 12 10-12V8L12 2z" />
+        {/* T shape */}
+        <line x1="5" y1="6.5" x2="19" y2="6.5" strokeWidth="2.5" strokeLinecap="round" />
+        <line x1="12" y1="6.5" x2="12" y2="18" strokeWidth="2.5" strokeLinecap="round" />
         {/* Ellipse ring around stem */}
-        <ellipse cx="12" cy="12" rx="6" ry="2" fill="none" stroke="white" strokeWidth="1.2" />
+        <ellipse cx="12" cy="12" rx="5" ry="1.8" strokeWidth="1.2" />
       </svg>
     ),
     // Developer icons
