@@ -264,22 +264,19 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.3">
+      <svg viewBox="0 0 24 24" className={className} fill="none">
         {gradientDef}
-        {/* USDT - large front coin */}
-        <circle cx="12" cy="15" r="7" fill={strokeColor} fillOpacity="0.1" />
-        <circle cx="12" cy="15" r="7" />
-        <path d="M12 12v6" strokeWidth="2" strokeLinecap="round" />
-        <path d="M8.5 13h7" strokeWidth="2" strokeLinecap="round" />
-        {/* BTC - top left coin */}
-        <circle cx="5" cy="8" r="5" fill={strokeColor} fillOpacity="0.15" />
-        <circle cx="5" cy="8" r="5" />
-        <path d="M4 6v4M6 6v4" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M3.5 7h3M3.5 9h3" strokeWidth="1" strokeLinecap="round" />
-        {/* ETH - top right coin */}
-        <circle cx="19" cy="8" r="5" fill={strokeColor} fillOpacity="0.15" />
-        <circle cx="19" cy="8" r="5" />
-        <path d="M19 5l-3 3.5 3 1.5 3-1.5L19 5z" strokeWidth="1" strokeLinejoin="round" fill={strokeColor} fillOpacity="0.2" />
+        {/* Bitcoin - orange coin */}
+        <circle cx="6" cy="7" r="5.5" fill="#F7931A" />
+        <text x="6" y="10" textAnchor="middle" fontSize="8" fontWeight="bold" fill="white">₿</text>
+        {/* Ethereum - purple coin */}
+        <circle cx="18" cy="7" r="5.5" fill="#627EEA" />
+        <path d="M18 3.5l-3 4 3 1.5 3-1.5-3-4z" fill="white" fillOpacity="0.9" />
+        <path d="M18 10.5l-3-1.5 3 4 3-4-3 1.5z" fill="white" fillOpacity="0.6" />
+        {/* USDT - green coin (front) */}
+        <circle cx="12" cy="16" r="7" fill="#26A17B" />
+        <path d="M12 12v8" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M7.5 13.5h9" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
     ),
     // Developer icons
