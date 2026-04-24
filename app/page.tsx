@@ -161,26 +161,32 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
   const icons: Record<string, React.ReactNode> = {
     // Feature icons
     wallet: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <rect x="2" y="6" width="20" height="14" rx="2" />
-        <path d="M22 10H18a2 2 0 0 0 0 4h4" />
-        <path d="M18 12h.01" />
-        <path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+        <rect x="2" y="5" width="20" height="16" rx="3" />
+        <path d="M2 10h20" />
+        <circle cx="17" cy="15" r="2" />
+        <path d="M6 2v3M10 2v3M14 2v3" strokeLinecap="round" />
       </svg>
     ),
     consolidate: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M8 6h13M8 12h13M8 18h13" />
-        <path d="M3 6l3 3-3 3" />
-        <path d="M3 15l3 3-3 3" />
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="6" r="3" />
+        <rect x="14" y="14" width="8" height="8" rx="2" fill={strokeColor} fillOpacity="0.2" />
+        <path d="M9 6h6M9 18h3M6 9v6M18 9v3" strokeLinecap="round" />
+        <path d="M18 14v4M16 16h4" strokeLinecap="round" />
       </svg>
     ),
     monitor: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" strokeLinecap="round" />
+        <path d="M6 8l3 3 3-3 4 4" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="17" cy="8" r="1.5" fill={strokeColor} />
       </svg>
     ),
     chain: (
@@ -210,58 +216,78 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Solution icons
     processor: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <rect x="9" y="9" width="6" height="6" />
-        <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" />
+        {/* Credit card */}
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <path d="M2 10h20" />
+        <rect x="5" y="13" width="4" height="3" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
       </svg>
     ),
     otc: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+        {/* Two people exchange */}
+        <circle cx="7" cy="7" r="3" />
+        <path d="M2 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+        <circle cx="17" cy="7" r="3" />
+        <path d="M12 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+        <path d="M10 10l4 0M12 8l2 2-2 2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     trading: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M3 3v18h18" />
-        <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3" />
+        {/* Bar chart */}
+        <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="7" y="10" width="3" height="8" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
+        <rect x="12" y="6" width="3" height="12" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
+        <rect x="17" y="12" width="3" height="6" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
       </svg>
     ),
     marketplace: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-        <path d="M9 22V12h6v10" />
+        {/* Shopping cart */}
+        <circle cx="9" cy="21" r="1.5" fill={strokeColor} />
+        <circle cx="19" cy="21" r="1.5" fill={strokeColor} />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     gaming: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M6 12h4M8 10v4" />
-        <circle cx="17" cy="10" r="1" />
-        <circle cx="15" cy="14" r="1" />
-        <rect x="2" y="6" width="20" height="12" rx="3" />
+        {/* Game controller */}
+        <rect x="2" y="6" width="20" height="12" rx="4" />
+        <path d="M6 12h4M8 10v4" strokeLinecap="round" />
+        <circle cx="16" cy="10" r="1" fill={strokeColor} />
+        <circle cx="18" cy="12" r="1" fill={strokeColor} />
+        <circle cx="16" cy="14" r="1" fill={strokeColor} />
+        <circle cx="14" cy="12" r="1" fill={strokeColor} />
       </svg>
     ),
     fintech: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <circle cx="12" cy="12" r="10" />
+        {/* Globe with connections */}
+        <circle cx="12" cy="12" r="9" />
         <path d="M2 12h20" />
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        <path d="M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10z" />
+        <path d="M4.5 7h15M4.5 17h15" />
       </svg>
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M12 2v14M5 10l7 7 7-7" />
-        <path d="M5 22h14" />
+        {/* Tether logo - circle with T and ellipse */}
+        <circle cx="12" cy="12" r="10" />
+        {/* Horizontal bar of T */}
+        <rect x="5" y="5" width="14" height="3" rx="0.5" fill={strokeColor} stroke="none" />
+        {/* Vertical stem of T */}
+        <rect x="9.5" y="5" width="5" height="14" rx="0.5" fill={strokeColor} stroke="none" />
+        {/* Ellipse ring around stem */}
+        <ellipse cx="12" cy="12" rx="6" ry="2" strokeWidth="1.5" />
       </svg>
     ),
     // Developer icons
@@ -940,19 +966,22 @@ export default function CryptoRailsLandingPage() {
           {steps.map((step, idx) => (
             <div key={step.number} className="relative text-center">
               {idx < steps.length - 1 && (
-                <div className="absolute left-[calc(50%+32px)] top-8 hidden h-[2px] w-[calc(100%-64px)] lg:block">
+                <div className="absolute left-[calc(50%+48px)] top-12 hidden h-[2px] w-[calc(100%-96px)] lg:block">
                   <div className={cn("h-full w-full border-t-2 border-dashed", isDark ? "border-slate-700" : "border-slate-300")} />
-                  <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400/60" />
+                  <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
                 </div>
               )}
-              <div className={cn("mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-xl border", isDark ? "border-slate-700 bg-[#0A1222]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]")}>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10">
-                  <Icon name={step.icon} className="h-6 w-6" />
-                </div>
+              <div className="mx-auto mb-5 flex h-24 w-24 items-center justify-center">
+                <Icon name={step.icon} className="h-16 w-16" />
               </div>
-              <div className="mb-2 text-sm font-medium text-slate-500">{step.number}</div>
-              <h3 className={cn("text-base font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{step.title}</h3>
-              <p className={cn("mx-auto mt-3 max-w-[220px] text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{step.description}</p>
+              <div className={cn(
+                "mb-2 inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold",
+                isDark ? "bg-blue-500/20 text-blue-300" : "bg-blue-500/10 text-blue-600"
+              )}>
+                {step.number}
+              </div>
+              <h3 className={cn("text-lg font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{step.title}</h3>
+              <p className={cn("mx-auto mt-3 max-w-[240px] text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{step.description}</p>
             </div>
           ))}
         </div>
@@ -971,17 +1000,17 @@ export default function CryptoRailsLandingPage() {
               From payment processors to marketplaces, CryptoRails supports teams that need structured crypto payment infrastructure, wallet control, and treasury consolidation.
             </p>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {solutions.map((solution) => (
               <div
                 key={solution.title}
-                className={cn("rounded-lg border p-4 transition-colors", isDark ? "border-slate-800 bg-white/[0.02]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]")}
+                className={cn("rounded-xl p-5 transition-all hover:scale-[1.02]", isDark ? "bg-gradient-to-br from-slate-800/50 to-slate-900/30" : "bg-gradient-to-br from-white to-slate-50 shadow-[0_4px_20px_rgba(0,0,0,0.06)]")}
               >
-                <div className={cn("mb-3 inline-flex h-9 w-9 items-center justify-center rounded-md border", isDark ? "border-slate-700 bg-slate-900/80" : "border-slate-300/30 bg-slate-100/80")}>
-                  <Icon name={solution.icon} className="h-4 w-4" />
+                <div className="mb-4">
+                  <Icon name={solution.icon} className="h-12 w-12" />
                 </div>
-                <h3 className={cn("text-sm font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{solution.title}</h3>
-                <p className={cn("mt-1.5 text-sm leading-5", isDark ? "text-slate-400" : "text-slate-500")}>{solution.description}</p>
+                <h3 className={cn("text-base font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{solution.title}</h3>
+                <p className={cn("mt-2 text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{solution.description}</p>
               </div>
             ))}
           </div>
