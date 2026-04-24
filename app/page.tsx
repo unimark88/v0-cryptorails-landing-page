@@ -266,13 +266,14 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     receive: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Tether logo - pentagon outline with T and ellipse */}
-        <path d="M12 2L2 8v2l10 12 10-12V8L12 2z" />
-        {/* T shape */}
-        <line x1="5" y1="6.5" x2="19" y2="6.5" strokeWidth="2.5" strokeLinecap="round" />
-        <line x1="12" y1="6.5" x2="12" y2="18" strokeWidth="2.5" strokeLinecap="round" />
+        {/* Tether logo - circle with T and ellipse */}
+        <circle cx="12" cy="12" r="10" />
+        {/* Horizontal bar of T */}
+        <rect x="5" y="5" width="14" height="3" rx="0.5" fill={strokeColor} stroke="none" />
+        {/* Vertical stem of T */}
+        <rect x="9.5" y="5" width="5" height="14" rx="0.5" fill={strokeColor} stroke="none" />
         {/* Ellipse ring around stem */}
-        <ellipse cx="12" cy="12" rx="5" ry="1.8" strokeWidth="1.2" />
+        <ellipse cx="12" cy="12" rx="6" ry="2" strokeWidth="1.5" />
       </svg>
     ),
     // Developer icons
