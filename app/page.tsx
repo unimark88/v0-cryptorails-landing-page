@@ -328,13 +328,13 @@ function ThemeToggle({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: bo
 
 function CryptoRailsLogo({ isDark = true }: { isDark?: boolean }) {
   return (
-    <div className="flex items-center gap-1.5">
+    <div className="flex items-center gap-2">
       <img 
         src="/logo.png" 
         alt="CryptoRails Logo" 
-        className="h-5 w-5 object-contain"
+        className="h-8 w-8 object-contain"
       />
-      <span className={cn("text-sm font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
+      <span className={cn("text-base font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
         CryptoRails
       </span>
     </div>
