@@ -335,7 +335,8 @@ function CryptoRailsLogo({ isDark = true }: { isDark?: boolean }) {
         alt="CryptoRails Logo" 
         width={36}
         height={36}
-        className="h-9 w-9 object-contain"
+        style={{ width: '36px', height: '36px', minWidth: '36px', minHeight: '36px' }}
+        className="object-contain"
       />
       <span className={cn("text-lg font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
         CryptoRails
