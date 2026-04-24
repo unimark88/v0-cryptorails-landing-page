@@ -161,26 +161,32 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
   const icons: Record<string, React.ReactNode> = {
     // Feature icons
     wallet: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <rect x="2" y="6" width="20" height="14" rx="2" />
-        <path d="M22 10H18a2 2 0 0 0 0 4h4" />
-        <path d="M18 12h.01" />
-        <path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2" />
+        <rect x="2" y="5" width="20" height="16" rx="3" />
+        <path d="M2 10h20" />
+        <circle cx="17" cy="15" r="2" />
+        <path d="M6 2v3M10 2v3M14 2v3" strokeLinecap="round" />
       </svg>
     ),
     consolidate: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M8 6h13M8 12h13M8 18h13" />
-        <path d="M3 6l3 3-3 3" />
-        <path d="M3 15l3 3-3 3" />
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="6" cy="18" r="3" />
+        <circle cx="18" cy="6" r="3" />
+        <rect x="14" y="14" width="8" height="8" rx="2" fill={strokeColor} fillOpacity="0.2" />
+        <path d="M9 6h6M9 18h3M6 9v6M18 9v3" strokeLinecap="round" />
+        <path d="M18 14v4M16 16h4" strokeLinecap="round" />
       </svg>
     ),
     monitor: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <path d="M8 21h8M12 17v4" strokeLinecap="round" />
+        <path d="M6 8l3 3 3-3 4 4" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="17" cy="8" r="1.5" fill={strokeColor} />
       </svg>
     ),
     chain: (
@@ -258,10 +264,12 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        <path d="M12 2v14M5 10l7 7 7-7" />
-        <path d="M5 22h14" />
+        <circle cx="12" cy="12" r="10" />
+        <path d="M8 12l4 4 4-4" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 8v8" strokeLinecap="round" />
+        <path d="M7 7l2 2M17 7l-2 2" strokeLinecap="round" />
       </svg>
     ),
     // Developer icons
@@ -940,24 +948,13 @@ export default function CryptoRailsLandingPage() {
           {steps.map((step, idx) => (
             <div key={step.number} className="relative text-center">
               {idx < steps.length - 1 && (
-                <div className="absolute left-[calc(50%+56px)] top-14 hidden h-[2px] w-[calc(100%-112px)] lg:block">
+                <div className="absolute left-[calc(50%+48px)] top-12 hidden h-[2px] w-[calc(100%-96px)] lg:block">
                   <div className={cn("h-full w-full border-t-2 border-dashed", isDark ? "border-slate-700" : "border-slate-300")} />
-                  <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
+                  <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
                 </div>
               )}
-              <div className={cn(
-                "mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-2xl border-2 relative overflow-hidden",
-                isDark 
-                  ? "border-slate-700/50 bg-gradient-to-br from-[#0A1222] to-[#0F1A2E]" 
-                  : "border-slate-200 bg-gradient-to-br from-white to-slate-50 shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
-              )}>
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10" />
-                <div className={cn(
-                  "relative flex h-20 w-20 items-center justify-center rounded-xl border",
-                  isDark ? "border-blue-500/30 bg-blue-500/10" : "border-blue-400/40 bg-blue-500/5"
-                )}>
-                  <Icon name={step.icon} className="h-10 w-10" />
-                </div>
+              <div className="mx-auto mb-5 flex h-24 w-24 items-center justify-center">
+                <Icon name={step.icon} className="h-16 w-16" />
               </div>
               <div className={cn(
                 "mb-2 inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold",
