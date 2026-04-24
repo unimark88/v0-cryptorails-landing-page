@@ -248,12 +248,10 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     marketplace: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Store front */}
-        <path d="M3 9l2-6h14l2 6" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M3 9h18v12H3V9z" />
-        <rect x="8" y="13" width="8" height="8" />
-        <path d="M12 13v8" />
-        <path d="M3 9c0 1.5 1.5 3 3 3s3-1.5 3-3c0 1.5 1.5 3 3 3s3-1.5 3-3c0 1.5 1.5 3 3 3s3-1.5 3-3" />
+        {/* Shopping cart */}
+        <circle cx="9" cy="21" r="1.5" fill={strokeColor} />
+        <circle cx="19" cy="21" r="1.5" fill={strokeColor} />
+        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     gaming: (
@@ -271,11 +269,11 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     fintech: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Globe */}
-        <circle cx="12" cy="12" r="10" />
-        <ellipse cx="12" cy="12" rx="4" ry="10" />
+        {/* Globe with connections */}
+        <circle cx="12" cy="12" r="9" />
         <path d="M2 12h20" />
-        <path d="M12 2a15 15 0 0 1 0 20" />
+        <path d="M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10c-2.5-3-4-6.5-4-10s1.5-7 4-10z" />
+        <path d="M4.5 7h15M4.5 17h15" />
       </svg>
     ),
     // Step icons
