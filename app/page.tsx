@@ -869,48 +869,36 @@ export default function CryptoRailsLandingPage() {
             Partner with the best in the industry
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-            {/* Sumsub */}
-            <div className={cn("flex items-center gap-2", isDark ? "text-slate-300" : "text-slate-600")}>
-              <svg viewBox="0 0 120 24" className="h-6 w-auto" fill="currentColor">
-                <path d="M10 4c-3.3 0-6 2.7-6 6s2.7 6 6 6c1.7 0 3.2-.7 4.3-1.8l1.4 1.4C14 17.4 12.1 18 10 18c-4.4 0-8-3.6-8-8s3.6-8 8-8c2.1 0 4 .8 5.4 2.1l-1.4 1.4C12.9 4.5 11.5 4 10 4z"/>
-                <text x="22" y="16" fontSize="12" fontWeight="600">Sumsub</text>
-              </svg>
-            </div>
-            {/* Elliptic */}
-            <div className={cn("flex items-center gap-2", isDark ? "text-slate-300" : "text-slate-600")}>
-              <svg viewBox="0 0 120 24" className="h-6 w-auto" fill="currentColor">
-                <ellipse cx="10" cy="12" rx="8" ry="6" fill="none" stroke="currentColor" strokeWidth="2"/>
-                <text x="22" y="16" fontSize="12" fontWeight="600">Elliptic</text>
-              </svg>
-            </div>
-            {/* CertiK */}
-            <div className={cn("flex items-center gap-2", isDark ? "text-slate-300" : "text-slate-600")}>
-              <svg viewBox="0 0 120 24" className="h-6 w-auto" fill="currentColor">
-                <path d="M10 2L2 12l8 10 8-10L10 2zm0 4l4.8 6L10 18l-4.8-6L10 6z"/>
-                <text x="22" y="16" fontSize="12" fontWeight="600">CertiK</text>
-              </svg>
-            </div>
-            {/* Ceffu */}
-            <div className={cn("flex items-center gap-2", isDark ? "text-slate-300" : "text-slate-600")}>
-              <svg viewBox="0 0 120 24" className="h-6 w-auto" fill="currentColor">
-                <rect x="2" y="6" width="16" height="12" rx="2" fill="none" stroke="currentColor" strokeWidth="2"/>
-                <path d="M6 10h8M6 14h6" stroke="currentColor" strokeWidth="1.5"/>
-                <text x="22" y="16" fontSize="12" fontWeight="600">Ceffu</text>
-              </svg>
-            </div>
-            {/* MoonPay */}
-            <div className={cn("flex items-center gap-2", isDark ? "text-slate-300" : "text-slate-600")}>
-              <svg viewBox="0 0 120 24" className="h-6 w-auto" fill="currentColor">
-                <path d="M10 4a8 8 0 010 16 6 6 0 000-12 4 4 0 010 8"/>
-                <text x="22" y="16" fontSize="12" fontWeight="600">MoonPay</text>
-              </svg>
-            </div>
-            {/* Visa */}
-            <div className={cn("flex items-center gap-2", isDark ? "text-slate-300" : "text-slate-600")}>
-              <svg viewBox="0 0 80 24" className="h-6 w-auto" fill="currentColor">
-                <path d="M32.3 4L27 20h-4.2l3.3-12.5c.2-.7-.2-1.2-.9-1.5-1.6-.6-3.4-1.1-5.3-1.4l.1-.6h6.8c.9 0 1.7.6 1.9 1.5L32.3 4zM43.8 14.3c0-4-5.5-4.2-5.5-6 0-.5.5-1.1 1.7-1.2 1.8-.1 3.5.4 4.6.9l.8-3.8c-1.1-.4-2.9-.9-5-.9-5.2 0-8.9 2.8-8.9 6.8 0 3 2.6 4.6 4.7 5.6 2.1 1 2.8 1.6 2.8 2.5 0 1.4-1.7 2-3.2 2-2.7 0-4.3-.7-5.5-1.3l-1 4.6c1.3.6 3.6 1.1 6 1.1 5.5 0 9.1-2.7 9.1-7 0-2.4-.4-4.2-1.6-5.3zM57.5 4l-4.2 16h4l.7-2.5h5l.4 2.5h3.6L63.8 4h-6.3zm.8 10.6l2.1-5.7 1.2 5.7h-3.3zM19.8 4l-5.5 16h-4.2L6 8.2c-.2-.9-.5-1.2-1.2-1.6C3.5 5.9 1.8 5.3 0 4.9l.1-.9h7.1c.9 0 1.7.6 1.9 1.7l1.8 9.4 4.4-11.1h4.5z"/>
-              </svg>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/sumsub-logo.png" 
+              alt="Sumsub" 
+              className={cn("h-8 w-auto object-contain", isDark && "brightness-0 invert")}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/chainalysis-logo.png" 
+              alt="Chainalysis" 
+              className={cn("h-8 w-auto object-contain", isDark && "brightness-0 invert")}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/certik-logo.png" 
+              alt="CertiK" 
+              className={cn("h-8 w-auto object-contain", isDark && "brightness-0 invert")}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/ceffu-logo.png" 
+              alt="Ceffu" 
+              className={cn("h-8 w-auto object-contain", isDark && "brightness-0 invert")}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/visa-logo.png" 
+              alt="Visa" 
+              className={cn("h-8 w-auto object-contain", isDark && "brightness-0 invert")}
+            />
           </div>
         </div>
       </section>
