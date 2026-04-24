@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import Image from "next/image";
 
 const featureCards = [
   {
@@ -330,8 +329,9 @@ function ThemeToggle({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: bo
 function CryptoRailsLogo({ isDark = true }: { isDark?: boolean }) {
   return (
     <div className="flex items-center gap-2">
-      <Image 
-        src="/logo.PNG" 
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img 
+        src="/logo.png" 
         alt="CryptoRails Logo" 
         width={32}
         height={32}
