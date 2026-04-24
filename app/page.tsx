@@ -218,70 +218,64 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     processor: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Credit card with chip */}
-        <rect x="2" y="4" width="20" height="16" rx="3" />
-        <rect x="5" y="8" width="5" height="4" rx="1" fill={strokeColor} fillOpacity="0.2" />
-        <path d="M5 9.5h5M5 11h5" strokeWidth="0.8" />
-        <path d="M2 14h20" />
-        <path d="M5 17.5h6M14 17.5h5" strokeWidth="1.2" strokeLinecap="round" />
+        {/* Credit card */}
+        <rect x="2" y="5" width="20" height="14" rx="2" />
+        <path d="M2 10h20" />
+        <rect x="5" y="13" width="4" height="3" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
       </svg>
     ),
     otc: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Handshake / deal */}
-        <path d="M20 8l-2 2-4-3-2 2-4-3-2 2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M4 14l4 4 3-3 3 3 3-3 3 3" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="6" cy="6" r="2" fill={strokeColor} fillOpacity="0.2" />
-        <circle cx="18" cy="6" r="2" fill={strokeColor} fillOpacity="0.2" />
-        <path d="M2 20h20" strokeLinecap="round" />
+        {/* Two people exchange */}
+        <circle cx="7" cy="7" r="3" />
+        <path d="M2 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+        <circle cx="17" cy="7" r="3" />
+        <path d="M12 21v-2a4 4 0 0 1 4-4h2a4 4 0 0 1 4 4v2" />
+        <path d="M10 10l4 0M12 8l2 2-2 2" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
     trading: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Candlestick chart */}
-        <path d="M4 4v16" />
-        <path d="M4 20h18" />
-        <rect x="7" y="8" width="3" height="6" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
-        <path d="M8.5 6v2M8.5 14v3" strokeLinecap="round" />
-        <rect x="12" y="10" width="3" height="5" rx="0.5" fill={strokeColor} fillOpacity="0.2" />
-        <path d="M13.5 8v2M13.5 15v2" strokeLinecap="round" />
-        <rect x="17" y="6" width="3" height="8" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
-        <path d="M18.5 4v2M18.5 14v4" strokeLinecap="round" />
+        {/* Bar chart */}
+        <path d="M3 3v18h18" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="7" y="10" width="3" height="8" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
+        <rect x="12" y="6" width="3" height="12" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
+        <rect x="17" y="12" width="3" height="6" rx="0.5" fill={strokeColor} fillOpacity="0.3" />
       </svg>
     ),
     marketplace: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Shopping cart with coins */}
-        <circle cx="9" cy="20" r="1.5" fill={strokeColor} />
-        <circle cx="17" cy="20" r="1.5" fill={strokeColor} />
-        <path d="M3 3h2l2 12h12l2-8H7" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="18" cy="6" r="4" fill={strokeColor} fillOpacity="0.2" />
-        <path d="M18 4.5v3M16.5 6h3" strokeWidth="1.2" strokeLinecap="round" />
+        {/* Store front */}
+        <path d="M3 9l2-6h14l2 6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M3 9h18v12H3V9z" />
+        <rect x="8" y="13" width="8" height="8" />
+        <path d="M12 13v8" />
+        <path d="M3 9c0 1.5 1.5 3 3 3s3-1.5 3-3c0 1.5 1.5 3 3 3s3-1.5 3-3c0 1.5 1.5 3 3 3s3-1.5 3-3" />
       </svg>
     ),
     gaming: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
         {/* Game controller */}
-        <path d="M6 11h3M7.5 9.5v3" strokeLinecap="round" />
-        <circle cx="16" cy="10" r="1.2" fill={strokeColor} />
-        <circle cx="18" cy="12" r="1.2" fill={strokeColor} />
-        <path d="M4 8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v6a4 4 0 0 1-4 4h-2l-1 2h-2l-1-2H8a4 4 0 0 1-4-4V8z" />
+        <rect x="2" y="6" width="20" height="12" rx="4" />
+        <path d="M6 12h4M8 10v4" strokeLinecap="round" />
+        <circle cx="16" cy="10" r="1" fill={strokeColor} />
+        <circle cx="18" cy="12" r="1" fill={strokeColor} />
+        <circle cx="16" cy="14" r="1" fill={strokeColor} />
+        <circle cx="14" cy="12" r="1" fill={strokeColor} />
       </svg>
     ),
     fintech: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Globe with currency */}
-        <circle cx="12" cy="12" r="9" />
-        <ellipse cx="12" cy="12" rx="4" ry="9" />
-        <path d="M3 12h18" />
-        <path d="M5 7h14M5 17h14" strokeWidth="1" />
-        <circle cx="19" cy="5" r="4" fill={strokeColor} fillOpacity="0.2" />
-        <path d="M18 4v2.5M19.5 4.5l-3 2" strokeWidth="1" strokeLinecap="round" />
+        {/* Globe */}
+        <circle cx="12" cy="12" r="10" />
+        <ellipse cx="12" cy="12" rx="4" ry="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15 15 0 0 1 0 20" />
       </svg>
     ),
     // Step icons
