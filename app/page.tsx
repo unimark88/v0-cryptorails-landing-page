@@ -328,16 +328,16 @@ function ThemeToggle({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: bo
 
 function CryptoRailsLogo({ isDark = true }: { isDark?: boolean }) {
   return (
-    <div className="flex items-center gap-2.5">
+    <div className="flex items-center gap-2">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img 
         src="/logo.png" 
         alt="CryptoRails Logo" 
-        width={44}
-        height={44}
-        className="h-11 w-11 object-contain"
+        width={36}
+        height={36}
+        className="h-9 w-9 object-contain"
       />
-      <span className={cn("text-lg font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
+      <span className={cn("text-base font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
         CryptoRails
       </span>
     </div>
