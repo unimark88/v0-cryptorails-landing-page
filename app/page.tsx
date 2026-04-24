@@ -268,8 +268,8 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
         {gradientDef}
         {/* USDT coin */}
         <circle cx="12" cy="12" r="9" />
-        <line x1="12" y1="8" x2="12" y2="17" strokeWidth="2" strokeLinecap="round" />
-        <line x1="7" y1="9" x2="17" y2="9" strokeWidth="2" strokeLinecap="round" />
+        <line x1="12" y1="8" x2="12" y2="17" stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
+        <line x1="7" y1="9" x2="17" y2="9" stroke={strokeColor} strokeWidth="2" strokeLinecap="round" />
       </svg>
     ),
     // Developer icons
