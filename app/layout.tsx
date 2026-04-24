@@ -30,14 +30,14 @@ export const metadata: Metadata = {
   authors: [{ name: 'CryptoRails' }],
   creator: 'CryptoRails',
   publisher: 'CryptoRails',
-  metadataBase: new URL('https://cryptorails.io'),
+  metadataBase: new URL('https://cryptorails.tech'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://cryptorails.io',
+    url: 'https://cryptorails.tech',
     siteName: 'CryptoRails',
     title: 'CryptoRails - Crypto Payment Gateway & Wallet Infrastructure',
     description: 'Accept USDT and multi-chain crypto payments with CryptoRails. Enterprise-grade crypto payment gateway with segregated wallets, automatic fund consolidation, and treasury management.',
