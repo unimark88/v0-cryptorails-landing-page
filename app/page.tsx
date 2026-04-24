@@ -585,14 +585,14 @@ function ApiCodeTabs() {
   const tab = apiTabs[activeTab];
 
   return (
-    <div className="rounded-lg border border-slate-800 bg-[#0A1222] p-3">
-      <div className="flex flex-wrap gap-1 border-b border-slate-800 pb-2">
+    <div className="w-full overflow-hidden rounded-lg border border-slate-800 bg-[#0A1222] p-3">
+      <div className="-mx-1 flex gap-1 overflow-x-auto border-b border-slate-800 px-1 pb-2 scrollbar-hide">
         {apiTabs.map((t, idx) => (
           <button
             key={t.name}
             onClick={() => setActiveTab(idx)}
             className={cn(
-              "cursor-pointer rounded px-2 py-1 text-xs transition",
+              "shrink-0 cursor-pointer whitespace-nowrap rounded px-2 py-1 text-xs transition",
               idx === activeTab
                 ? "border border-blue-500/20 bg-blue-500/10 text-blue-300"
                 : "text-slate-400 hover:text-slate-300"
@@ -604,13 +604,13 @@ function ApiCodeTabs() {
       </div>
 
       <div className="mt-4 overflow-hidden rounded-md border border-slate-800 bg-[#06101F] p-3">
-        <div className="mb-2 text-xs text-slate-400">{tab.endpoint}</div>
-        <pre className="overflow-x-auto text-xs leading-5 text-slate-300">
+        <div className="mb-2 truncate text-xs text-slate-400">{tab.endpoint}</div>
+        <pre className="overflow-x-auto text-[10px] leading-5 text-slate-300 sm:text-xs">
           {tab.code}
         </pre>
       </div>
 
-      <div className="mt-4 grid gap-2 sm:grid-cols-3">
+      <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-3">
         {tab.features.map((note) => (
           <div
             key={note}
