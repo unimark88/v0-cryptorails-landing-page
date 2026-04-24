@@ -266,18 +266,10 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     receive: (
       <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
         {gradientDef}
-        {/* Bitcoin coin - top left */}
-        <circle cx="5" cy="7" r="5" />
-        <path d="M4 5.5v3M6 5.5v3" strokeLinecap="round" />
-        <path d="M3.5 6.5h3M3.5 8h3" strokeWidth="1" strokeLinecap="round" />
-        {/* Ethereum coin - top right */}
-        <circle cx="19" cy="7" r="5" />
-        <path d="M19 4l-2.5 3.5 2.5 1 2.5-1L19 4z" strokeWidth="1" strokeLinejoin="round" />
-        <path d="M19 10l-2.5-1.5 2.5 2 2.5-2-2.5 1.5z" strokeWidth="1" strokeLinejoin="round" />
-        {/* USDT coin - front center */}
-        <circle cx="12" cy="16" r="7" />
-        <path d="M12 12v8" strokeWidth="2" strokeLinecap="round" />
-        <path d="M7.5 13.5h9" strokeWidth="2" strokeLinecap="round" />
+        {/* USDT coin */}
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 7v10" strokeWidth="2.5" strokeLinecap="round" />
+        <path d="M6 9h12" strokeWidth="2.5" strokeLinecap="round" />
       </svg>
     ),
     // Developer icons
