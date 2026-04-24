@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   description: 'CryptoRails is a scalable crypto payment gateway and wallet infrastructure platform for businesses. Accept USDT and multi-chain crypto payments, generate segregated wallets, and automatically consolidate funds into a secure treasury wallet.',
   generator: 'v0.app',
   icons: {
-    icon: '/logo.PNG',
-    apple: '/logo.PNG',
+    icon: '/icon.png',
+    apple: '/icon.png',
   },
 }
 
