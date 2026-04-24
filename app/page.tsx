@@ -847,15 +847,15 @@ export default function CryptoRailsLandingPage() {
 
           <div className="flex items-center justify-center lg:pl-4">
             <div className={cn(
-              "relative w-full max-w-3xl overflow-hidden rounded-xl border shadow-2xl",
+              "relative w-full max-w-4xl overflow-hidden rounded-xl border shadow-2xl",
               isDark ? "border-slate-800 bg-[#0A1222] shadow-blue-900/30" : "border-slate-300/30 bg-white/90 shadow-[0_8px_30px_rgba(0,0,0,0.08)]"
             )}>
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-transparent to-cyan-500/5" />
-              <div className="relative h-[340px] w-full overflow-hidden sm:h-[400px] lg:h-[460px]">
+              <div className="relative h-[380px] w-full overflow-hidden sm:h-[460px] lg:h-[520px]">
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tof8I6e63T99sEmSZ7Rr578b0zdDnt.png"
                   alt="CryptoRails Admin Dashboard showing fund consolidation flow, wallet management, and real-time activity monitoring"
-                  className="absolute left-0 top-0 w-[150%] max-w-none origin-top-left"
+                  className="absolute left-0 top-0 w-[140%] max-w-none origin-top-left scale-105"
                 />
               </div>
             </div>
