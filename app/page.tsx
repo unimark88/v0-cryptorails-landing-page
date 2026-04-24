@@ -940,19 +940,33 @@ export default function CryptoRailsLandingPage() {
           {steps.map((step, idx) => (
             <div key={step.number} className="relative text-center">
               {idx < steps.length - 1 && (
-                <div className="absolute left-[calc(50%+32px)] top-8 hidden h-[2px] w-[calc(100%-64px)] lg:block">
+                <div className="absolute left-[calc(50%+56px)] top-14 hidden h-[2px] w-[calc(100%-112px)] lg:block">
                   <div className={cn("h-full w-full border-t-2 border-dashed", isDark ? "border-slate-700" : "border-slate-300")} />
-                  <div className="absolute right-0 top-1/2 h-2.5 w-2.5 -translate-y-1/2 rounded-full bg-cyan-400/60" />
+                  <div className="absolute right-0 top-1/2 h-3 w-3 -translate-y-1/2 rounded-full bg-gradient-to-r from-blue-500 to-cyan-400" />
                 </div>
               )}
-              <div className={cn("mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-xl border", isDark ? "border-slate-700 bg-[#0A1222]" : "border-slate-300/30 bg-white/80 shadow-[0_2px_8px_rgba(0,0,0,0.04)]")}>
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-blue-500/30 bg-blue-500/10">
-                  <Icon name={step.icon} className="h-6 w-6" />
+              <div className={cn(
+                "mx-auto mb-6 flex h-28 w-28 items-center justify-center rounded-2xl border-2 relative overflow-hidden",
+                isDark 
+                  ? "border-slate-700/50 bg-gradient-to-br from-[#0A1222] to-[#0F1A2E]" 
+                  : "border-slate-200 bg-gradient-to-br from-white to-slate-50 shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+              )}>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10" />
+                <div className={cn(
+                  "relative flex h-20 w-20 items-center justify-center rounded-xl border",
+                  isDark ? "border-blue-500/30 bg-blue-500/10" : "border-blue-400/40 bg-blue-500/5"
+                )}>
+                  <Icon name={step.icon} className="h-10 w-10" />
                 </div>
               </div>
-              <div className="mb-2 text-sm font-medium text-slate-500">{step.number}</div>
-              <h3 className={cn("text-base font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{step.title}</h3>
-              <p className={cn("mx-auto mt-3 max-w-[220px] text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{step.description}</p>
+              <div className={cn(
+                "mb-2 inline-flex h-7 w-7 items-center justify-center rounded-full text-xs font-bold",
+                isDark ? "bg-blue-500/20 text-blue-300" : "bg-blue-500/10 text-blue-600"
+              )}>
+                {step.number}
+              </div>
+              <h3 className={cn("text-lg font-semibold", isDark ? "text-slate-100" : "text-slate-700")}>{step.title}</h3>
+              <p className={cn("mx-auto mt-3 max-w-[240px] text-sm leading-6", isDark ? "text-slate-400" : "text-slate-500")}>{step.description}</p>
             </div>
           ))}
         </div>
