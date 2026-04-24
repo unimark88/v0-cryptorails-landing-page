@@ -855,7 +855,7 @@ export default function CryptoRailsLandingPage() {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-Tof8I6e63T99sEmSZ7Rr578b0zdDnt.png"
                   alt="CryptoRails Admin Dashboard showing fund consolidation flow, wallet management, and real-time activity monitoring"
-                  className="absolute -left-[5%] -top-[5%] w-[180%] max-w-none"
+                  className="absolute left-0 top-0 w-[150%] max-w-none origin-top-left"
                 />
               </div>
             </div>
