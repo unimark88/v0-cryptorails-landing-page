@@ -328,16 +328,17 @@ function ThemeToggle({ isDark, setIsDark }: { isDark: boolean; setIsDark: (v: bo
 
 function CryptoRailsLogo({ isDark = true }: { isDark?: boolean }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-1.5">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img 
         src="/logo.png" 
         alt="CryptoRails Logo" 
-        width={56}
-        height={56}
-        className="h-14 w-14 object-contain"
+        width={36}
+        height={36}
+        style={{ width: '36px', height: '36px', minWidth: '36px', minHeight: '36px' }}
+        className="object-contain"
       />
-      <span className={cn("text-xl font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
+      <span className={cn("text-lg font-semibold tracking-tight", isDark ? "text-slate-50" : "text-slate-700")}>
         CryptoRails
       </span>
     </div>
@@ -586,7 +587,7 @@ function ApiCodeTabs() {
 
   return (
     <div className="w-full overflow-hidden rounded-lg border border-slate-800 bg-[#0A1222] p-3">
-      <div className="-mx-1 flex gap-1 overflow-x-auto border-b border-slate-800 px-1 pb-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+      <div className="-mx-1 flex gap-1 overflow-x-auto border-b border-slate-800 px-1 pb-2 scrollbar-hide">
         {apiTabs.map((t, idx) => (
           <button
             key={t.name}
