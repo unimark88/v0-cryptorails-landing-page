@@ -264,17 +264,16 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
         {gradientDef}
-        {/* Bitcoin coin */}
-        <circle cx="12" cy="12" r="9" />
-        {/* B symbol */}
-        <path d="M9 7v10M9 7h4a2.5 2.5 0 0 1 0 5H9m0 0h4.5a2.5 2.5 0 0 1 0 5H9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-        {/* Vertical lines through B */}
-        <line x1="10.5" y1="5" x2="10.5" y2="7" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="13" y1="5" x2="13" y2="7" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="10.5" y1="17" x2="10.5" y2="19" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
-        <line x1="13" y1="17" x2="13" y2="19" stroke={strokeColor} strokeWidth="1.5" strokeLinecap="round" />
+        {/* Bitcoin ₿ symbol */}
+        <path d="M8 6v12" strokeLinecap="round" />
+        <path d="M8 6h5c2.5 0 4 1.5 4 3.5s-1.5 3.5-4 3.5H8" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 13h6c2.5 0 4 1.5 4 3.5S16.5 20 14 20H8" strokeLinecap="round" strokeLinejoin="round" />
+        <line x1="10" y1="3" x2="10" y2="6" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="14" y1="3" x2="14" y2="6" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="10" y1="18" x2="10" y2="21" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
+        <line x1="14" y1="18" x2="14" y2="21" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
     // Developer icons
