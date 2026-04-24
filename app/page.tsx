@@ -112,13 +112,12 @@ const steps = [
 ];
 
 const trustedLogos = [
-  "Woven",
-  "Coinflow",
-  "Payverse",
-  "Tradaant",
-  "BlockPay",
-  "Zentana",
-  "Orbital",
+  "Sumsub",
+  "Elliptic",
+  "Certik",
+  "Ceffu",
+  "Moonpay",
+  "Visa",
 ];
 
 const stats = [
@@ -876,7 +875,7 @@ export default function CryptoRailsLandingPage() {
       <section className={cn("border-y py-10", isDark ? "border-white/5" : "border-slate-300/30")}>
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-500">
-            Trusted by innovative companies worldwide
+            Partner with the best in the industry
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
             {trustedLogos.map((logo, idx) => (
