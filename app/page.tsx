@@ -264,18 +264,22 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.5">
+      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.3">
         {gradientDef}
-        {/* USDT coin */}
-        <circle cx="12" cy="14" r="8" />
-        <path d="M12 10v8" strokeLinecap="round" />
-        <path d="M8 12h8" strokeLinecap="round" />
-        {/* Small BTC coin */}
-        <circle cx="6" cy="6" r="4" strokeWidth="1.2" />
-        <path d="M5 5v2.5M7 5v2.5M4.5 5.5h2.5M4.5 6.5h2.5" strokeWidth="0.8" strokeLinecap="round" />
-        {/* Small ETH coin */}
-        <circle cx="18" cy="6" r="4" strokeWidth="1.2" />
-        <path d="M18 4l-2 2.5 2 1 2-1L18 4z" strokeWidth="0.8" strokeLinejoin="round" />
+        {/* USDT - large front coin */}
+        <circle cx="12" cy="15" r="7" fill={strokeColor} fillOpacity="0.1" />
+        <circle cx="12" cy="15" r="7" />
+        <path d="M12 12v6" strokeWidth="2" strokeLinecap="round" />
+        <path d="M8.5 13h7" strokeWidth="2" strokeLinecap="round" />
+        {/* BTC - top left coin */}
+        <circle cx="5" cy="8" r="5" fill={strokeColor} fillOpacity="0.15" />
+        <circle cx="5" cy="8" r="5" />
+        <path d="M4 6v4M6 6v4" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M3.5 7h3M3.5 9h3" strokeWidth="1" strokeLinecap="round" />
+        {/* ETH - top right coin */}
+        <circle cx="19" cy="8" r="5" fill={strokeColor} fillOpacity="0.15" />
+        <circle cx="19" cy="8" r="5" />
+        <path d="M19 5l-3 3.5 3 1.5 3-1.5L19 5z" strokeWidth="1" strokeLinejoin="round" fill={strokeColor} fillOpacity="0.2" />
       </svg>
     ),
     // Developer icons
