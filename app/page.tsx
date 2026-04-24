@@ -264,16 +264,11 @@ function Icon({ name, className = "h-4 w-4", useGradient = true }: { name: strin
     ),
     // Step icons
     receive: (
-      <svg viewBox="0 0 24 24" className={className} fill="none" stroke={strokeColor} strokeWidth="1.8">
+      <svg viewBox="0 0 24 24" className={className} fill={strokeColor}>
         {gradientDef}
-        {/* Bitcoin ₿ symbol */}
-        <path d="M8 6v12" strokeLinecap="round" />
-        <path d="M8 6h5c2.5 0 4 1.5 4 3.5s-1.5 3.5-4 3.5H8" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 13h6c2.5 0 4 1.5 4 3.5S16.5 20 14 20H8" strokeLinecap="round" strokeLinejoin="round" />
-        <line x1="10" y1="3" x2="10" y2="6" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="14" y1="3" x2="14" y2="6" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="10" y1="18" x2="10" y2="21" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
-        <line x1="14" y1="18" x2="14" y2="21" stroke={strokeColor} strokeWidth="1.8" strokeLinecap="round" />
+        {/* Tether T symbol */}
+        <rect x="4" y="4" width="16" height="4" rx="1" />
+        <rect x="9" y="4" width="6" height="16" rx="1" />
       </svg>
     ),
     // Developer icons
